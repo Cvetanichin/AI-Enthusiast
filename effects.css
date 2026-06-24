@@ -1,0 +1,40 @@
+/* Cvetanichin — Visual Effects Tokens
+   ──────────────────────────────────────────────────────────
+   Borders, shadows, radius, backdrop, transitions.
+   The brand is editorial: sharp corners, hairline borders,  
+   warm shadows only, motion that is noticed but not felt.   */
+
+:root {
+
+  /* ── Border Radius ────────────────────────────────────── */
+  /* Almost none. Editorial system, not a product UI.        */
+  --radius-none:   0px;       /* buttons, cards, inputs — the default                */
+  --radius-sm:     2px;       /* maximum for any interactive element                 */
+  --radius-full:   9999px;    /* pill — reserved for the geometric dot markers only  */
+
+  /* ── Border Widths ───────────────────────────────────── */
+  --border-hairline:  0.5px;   /* all borders — editorial thinness                   */
+  --border-thin:      1px;     /* step list dot borders                               */
+
+  /* ── Shadows ──────────────────────────────────────────── */
+  /* Warm, subtle — never heavy, never cool-toned.           */
+  --shadow-none:   none;
+  --shadow-sm:     0 1px 8px  rgba(45,  45,  45,  0.05);   /* subtle lift            */
+  --shadow-md:     0 1px 24px rgba(45,  45,  45,  0.07);   /* nav on scroll          */
+  --shadow-warm:   0 4px 24px rgba(160, 85,  85,  0.08);   /* warm card hover tint   */
+
+  /* ── Backdrop ─────────────────────────────────────────── */
+  --blur-nav:      blur(12px);   /* @kind other */ /* sticky nav backdrop-filter  */
+
+  /* ── Transitions ──────────────────────────────────────── */
+  --transition-fast:    all 0.20s ease;    /* @kind other */
+  --transition-base:    all 0.25s ease;    /* @kind other */
+  --transition-reveal:  opacity 0.7s ease, transform 0.7s ease; /* @kind other */
+  --transition-slow:    opacity 0.8s ease, transform 0.8s ease; /* @kind other */
+
+  /* ── Scroll Reveal (reference values — not directly usable in CSS) ── */
+  /* Reveal up:   opacity 0→1 + translateY(28px)→0                      */
+  /* Reveal left: opacity 0→1 + translateX(-32px)→0                     */
+  /* Reveal right: opacity 0→1 + translateX(32px)→0                     */
+  /* Stagger delays: 0.1s, 0.2s, 0.3s, 0.4s                             */
+}

@@ -1,0 +1,92 @@
+/* ─────────────────────────────────────────────────────────────────────
+   Domain 1 — CSO Consultancy  (B2B)
+   Palette 1 · Confirmed hex values from palette (1).pdf
+
+   Five-colour palette: slate · stone · ochre gold · teal · near-black.
+   Authoritative, precise, warm but restrained. Shares the same
+   Fraunces/Outfit type system and component library as Domain 2.
+
+   Products in this domain:
+     • CSO Consultancy wing (advisory, retained, fractional CSO services)
+     • Future B2B offerings: workshops, diagnostics, strategy intensives
+
+   Semantic mapping:
+     Surfaces → stone warm neutrals (similar role to ivory in B2C)
+     Accent    → ochre gold (replaces dusty rose)
+     Inverse   → slate / near-black
+     Secondary → muted teal (supporting accent, use sparingly)
+   ───────────────────────────────────────────────────────────────────── */
+
+:root {
+
+  /* ── Brand identity ─────────────────────────────────── */
+  --domain-name:            "CSO Consultancy";
+  --domain-audience:        "B2B — organisations & senior women leaders";
+
+  /* ── Primitive palette — Palette 1 confirmed values ─── */
+
+  /* Slate family — authority anchor */
+  --p1-near-black:          #1E2019;   /* deepest inverse surface + text              */
+  --p1-slate:               #393E41;   /* dark surface, primary inverse bg            */
+  --p1-slate-mid:           #536068;   /* mid tone (interpolated)                     */
+  --p1-slate-light:         #8A9298;   /* muted text, captions on light surfaces      */
+
+  /* Stone family — warm neutral ground */
+  --p1-stone-light:         #EDEAE5;   /* lightest surface (default body bg)          */
+  --p1-stone:               #D3D0CB;   /* mid stone (alternate sections)              */
+  --p1-stone-dark:          #C4C0BA;   /* slightly deeper (muted sections)            */
+
+  /* Gold — primary accent (replaces rose) */
+  --p1-gold:                #E2C044;   /* primary CTA, eyebrows, dot markers          */
+  --p1-gold-deep:           #B89928;   /* hover states, emphasis                      */
+  --p1-gold-light:          #EDDA85;   /* gold on dark backgrounds (stat numbers)     */
+  --p1-gold-pale:           #F8F3DC;   /* very subtle gold tint surfaces              */
+
+  /* Teal — secondary accent (use sparingly) */
+  --p1-teal:                #587B7F;   /* supporting accent, dividers, selected state */
+  --p1-teal-light:          #8AABB0;   /* lighter teal for dark bg contexts           */
+
+  /* Warm white */
+  --p1-white:               #FAF9F6;
+
+  /* ── Semantic overrides ─────────────────────────────── */
+
+  /* Surfaces */
+  --surface-base:           var(--p1-stone-light);   /* #EDEAE5 — default bg          */
+  --surface-subtle:         var(--p1-stone);          /* #D3D0CB — alternate sections  */
+  --surface-muted:          var(--p1-stone-dark);     /* #C4C0BA — deeper sections     */
+  --surface-inverse:        var(--p1-slate);           /* #393E41 — dark sections       */
+  --surface-white:          var(--p1-white);           /* #FAF9F6 — card backgrounds    */
+  --surface-accent:         var(--p1-gold);            /* #E2C044 — accent fills        */
+
+  /* Text */
+  --text-primary:           var(--p1-near-black);     /* #1E2019 — primary text        */
+  --text-secondary:         var(--p1-slate);           /* #393E41 — body text           */
+  --text-muted:             var(--p1-slate-light);    /* #8A9298 — captions, muted     */
+  --text-inverse:           var(--p1-white);           /* #FAF9F6 — text on dark bg     */
+  --text-accent:            var(--p1-gold-deep);      /* #B89928 — emphasis text       */
+
+  /* Accent */
+  --accent-primary:         var(--p1-gold);            /* #E2C044                       */
+  --accent-light:           var(--p1-gold-light);     /* #EDDA85                       */
+  --accent-deep:            var(--p1-gold-deep);      /* #B89928                       */
+  --accent-pale:            var(--p1-gold-pale);      /* #F8F3DC                       */
+
+  /* Secondary accent — teal (sparingly) */
+  --accent-secondary:       var(--p1-teal);            /* #587B7F                       */
+  --accent-secondary-light: var(--p1-teal-light);     /* #8AABB0                       */
+
+  /* Borders — gold-tinted for consultancy domain */
+  --border-subtle:          rgba(226, 192, 68, 0.15);
+  --border-emphasis:        rgba(226, 192, 68, 0.22);
+  --border-strong:          rgba(226, 192, 68, 0.35);
+  --border-accent:          rgba(226, 192, 68, 0.60);
+  --border-inverse:         rgba(250, 249, 246, 0.07);   /* on slate backgrounds       */
+
+  /* Accent foreground — text colour on accent-filled surfaces (gold is light → dark text) */
+  --accent-fg:              var(--text-primary);   /* #1E2019 on gold #E2C044 — high contrast */
+
+  /* Fonts — unchanged between domains */
+  --font-display:           'Fraunces', Georgia, serif;
+  --font-body:              'Outfit', system-ui, sans-serif;
+}

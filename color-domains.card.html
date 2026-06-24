@@ -1,0 +1,100 @@
+<!-- @dsCard group="Colors" viewport="700x540" name="Domain Themes" subtitle="Two-domain colour architecture — Self-Improvement (B2C) · CSO Consultancy (B2B)" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #E8E4E0; font-family: 'Outfit', system-ui, sans-serif; padding: 24px; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .domain { display: flex; flex-direction: column; gap: 3px; }
+  .domain-header {
+    font-size: 9px; font-weight: 600; letter-spacing: 0.20em; text-transform: uppercase;
+    padding: 10px 13px; display: flex; justify-content: space-between; align-items: center;
+  }
+  .domain-tag { font-size: 8px; font-weight: 500; letter-spacing: 0.12em; padding: 3px 7px; }
+  .swatches-main { display: grid; grid-template-columns: repeat(5, 1fr); }
+  .swatch-main { height: 68px; }
+  .swatches-sub { display: grid; grid-template-columns: repeat(5, 1fr); }
+  .swatch-sub { height: 32px; }
+  .meta { padding: 11px 13px; background: white; }
+  .meta-title { font-size: 11px; font-weight: 500; margin-bottom: 3px; }
+  .meta-desc { font-size: 10px; font-weight: 300; line-height: 1.5; }
+  .meta-hex { font-size: 9px; font-weight: 400; margin-top: 5px; font-family: monospace; opacity: 0.6; }
+  .meta-code { font-size: 8.5px; font-weight: 400; margin-top: 4px; font-family: monospace; }
+  .shared-bar {
+    margin-top: 14px; padding: 10px 14px; background: white;
+    border: 0.5px solid #E0DBDA; display: flex; gap: 20px; align-items: center;
+  }
+  .shared-label { font-size: 9px; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 500; color: #9A9A9A; white-space: nowrap; }
+  .shared-desc { font-size: 10px; color: #5A5A5A; font-weight: 300; }
+</style>
+</head>
+<body>
+<div class="grid">
+
+  <!-- Domain 2: Self-Improvement B2C — Palette 3 confirmed -->
+  <div class="domain">
+    <div class="domain-header" style="background:#190828; color:#FDF8F9;">
+      <span>Self-Improvement · B2C</span>
+      <span class="domain-tag" style="background:rgba(229,83,129,0.22); color:#EFA9AE;">Palette 3</span>
+    </div>
+    <div class="swatches-main">
+      <div class="swatch-main" style="background:#190828;"></div>
+      <div class="swatch-main" style="background:#685762;"></div>
+      <div class="swatch-main" style="background:#9B9987;"></div>
+      <div class="swatch-main" style="background:#EFA9AE;"></div>
+      <div class="swatch-main" style="background:#E55381;"></div>
+    </div>
+    <div class="swatches-sub">
+      <div class="swatch-sub" style="background:#2E1A3A;"></div>
+      <div class="swatch-sub" style="background:#C8C6B8;"></div>
+      <div class="swatch-sub" style="background:#F8E0E2;"></div>
+      <div class="swatch-sub" style="background:#FCE8EE;"></div>
+      <div class="swatch-sub" style="background:#C23368;"></div>
+    </div>
+    <div class="meta">
+      <div class="meta-title" style="color:#190828;">Hot Pink · Blush · Mauve · Sage</div>
+      <div class="meta-desc" style="color:#685762;">Feminine · Vibrant · Grounded<br>Digital products · Lead magnets · Courses</div>
+      <div class="meta-hex" style="color:#E55381;">#190828 · #685762 · #9B9987 · #EFA9AE · #E55381</div>
+      <div class="meta-code" style="color:#C23368;">tokens/themes/selfimprovement.css</div>
+    </div>
+  </div>
+
+  <!-- Domain 1: CSO Consultancy B2B — Palette 1 confirmed -->
+  <div class="domain">
+    <div class="domain-header" style="background:#1E2019; color:#FAF9F6;">
+      <span>CSO Consultancy · B2B</span>
+      <span class="domain-tag" style="background:rgba(226,192,68,0.22); color:#EDDA85;">Palette 1</span>
+    </div>
+    <div class="swatches-main">
+      <div class="swatch-main" style="background:#393E41;"></div>
+      <div class="swatch-main" style="background:#D3D0CB;"></div>
+      <div class="swatch-main" style="background:#E2C044;"></div>
+      <div class="swatch-main" style="background:#587B7F;"></div>
+      <div class="swatch-main" style="background:#1E2019;"></div>
+    </div>
+    <div class="swatches-sub">
+      <div class="swatch-sub" style="background:#EDEAE5;"></div>
+      <div class="swatch-sub" style="background:#C4C0BA;"></div>
+      <div class="swatch-sub" style="background:#EDDA85;"></div>
+      <div class="swatch-sub" style="background:#8AABB0;"></div>
+      <div class="swatch-sub" style="background:#B89928;"></div>
+    </div>
+    <div class="meta">
+      <div class="meta-title" style="color:#1E2019;">Ochre Gold · Stone · Slate · Teal</div>
+      <div class="meta-desc" style="color:#393E41;">Authoritative · Precise · Warm restraint<br>Advisory · Retained CSO · Strategy</div>
+      <div class="meta-hex" style="color:#B89928;">#393E41 · #D3D0CB · #E2C044 · #587B7F · #1E2019</div>
+      <div class="meta-code" style="color:#8C7347;">tokens/themes/consultancy.css</div>
+    </div>
+  </div>
+
+</div>
+
+<div class="shared-bar">
+  <div class="shared-label">Shared system</div>
+  <div class="shared-desc">Fraunces serif · Outfit sans · Same spacing · Same components · Only the colour layer changes per domain</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Consultancy Page" description="Services landing page for CSO Consultancy (B2B) — ochre gold · warm stone · slate" -->
+<helmet>
+  <script src="./ds-base.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--surface-base); color: var(--text-primary); font-family: var(--font-body); font-weight: 300; -webkit-font-smoothing: antialiased; }
+  </style>
+</helmet>
+
+{{ tweakStyle }}
+
+<!-- NAV -->
+<nav style="position:sticky;top:0;z-index:100;background:var(--surface-white);backdrop-filter:blur(12px);border-bottom:0.5px solid var(--border-subtle);">
+  <div style="max-width:var(--max-layout);margin:0 auto;padding:0 var(--section-pad-x);height:64px;display:flex;align-items:center;justify-content:space-between;">
+    <a href="../landing-page/LandingPage.dc.html" style="font-family:var(--font-display);font-size:16px;font-weight:300;letter-spacing:0.08em;color:var(--text-primary);">CVETANICHIN</a>
+    <div style="display:flex;align-items:center;gap:2rem;">
+      <a href="../self-improvement-page/SelfImprovementPage.dc.html" style="font-family:var(--font-ui);font-size:var(--text-xs);font-weight:500;letter-spacing:var(--tracking-widest);text-transform:uppercase;color:var(--text-muted);">Self-Improvement</a>
+      <x-import component-from-global-scope="CvetanichinDesignSystem_f4419f.Button" variant="primary" size="sm" hint-size="auto,40px">Enquire</x-import>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO — slate inverse, serif headline -->
+<section style="background:var(--surface-inverse);padding:var(--section-pad-y) var(--section-pad-x);min-height:75vh;display:flex;align-items:flex-end;">
+  <div style="max-width:var(--max-layout);margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:var(--section-gap);align-items:flex-end;padding-bottom:1rem;">
+
+    <div style="display:flex;flex-direction:column;gap:2rem;">
+      <x-import component-from-global-scope="CvetanichinDesignSystem_f4419f.Eyebrow" tone="on-dark" hint-size="auto,20px" style="color:var(--accent-secondary-light);">CSO Consultancy</x-import>
+      <h1 style="font-family:var(--font-display);font-size:var(--text-display);font-weight:300;line-height:1.0;letter-spacing:var(--tracking-tight);color:var(--text-inverse);">Strategic clarity<br>for organisations<br><em style="font-style:italic;color:var(--accent-light);">ready to move.</em></h1>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:1.5rem;padding-left:var(--section-gap);border-left:0.5px solid var(--border-inverse);">
+      <p style="font-family:var(--font-body);font-size:var(--text-md);font-weight:300;line-height:var(--leading-loose);color:rgba(250,249,246,0.6);max-width:400px;">Fractional CSO services for organisations that need senior strategic leadership without a permanent hire. Clear scope. Direct engagement. Measurable outcomes.</p>
+      <x-import component-from-global-scope="CvetanichinDesignSystem_f4419f.Button" variant="accent" size="lg" arrow="true" hint-size="280px,56px">Enquire about availability</x-import>
+    </div>
+
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section style="background:var(--surface-base);padding:var(--section-pad-y) var(--section-pad-x);">
+  <div style="max-width:var(--max-layout);margin:0 auto;display:flex;flex-direction:column;gap:3.5rem;">
+
+    <div style="display:flex;flex-direction:column;gap:1.25rem;">
+      <x-import component-from-global-scope="CvetanichinDesignSystem_f4419f.Eyebrow" tone="muted" hint-size="auto,20px">Services</x-import>
+      <h2 style="font-family:var(--font-display);font-size:var(--text-3xl);font-weight:300;line-height:var(--leading-snug);letter-spacing:var(--tracking-tight);color:var(--text-primary);max-width:460px;">Three ways to work <em style="font-style:italic;">together.</em></h2>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;">
+
+      <div style="display:flex;flex-direction:column;gap:1.5rem;padding:2.5rem;background:var(--surface-white);border:0.5px solid var(--border-subtle);">
+        <div style="width:32px;height:32px;background:var(--accent-primary);flex-shrink:0;display:flex;align-items:center;justify-content:center;"><div style="width:10px;height:10px;background:var(--surface-white);"></div></div>
+        <div style="display:flex;flex-direction:column;gap:0.75rem;">
+          <x-import component-from-global-scope="CvetanichinDesignSystem_f4419f.Eyebrow" tone="muted" hint-size="auto,20px">Fractional CSO</x-import>
+          <h3 style="font-family:var(--font-display);font-size:24px;font-weight:300;line-height:var(--leading-snug);color:var(--text-primary);">Ongoing strategic leadership</h3>
+          <p style="font-family:var(--font-body);font-size:var(--text-base);font-weight:300;line-height:var(--leading-relaxed);color:var(--text-secondary);">Embedded part-time presence in your leadership team. Strategy, decision support, and board-level communication.</p>
+        </div>
+        <x-import component-from-global-scope="CvetanichinDesignSystem_f4419f.Button" variant="ghost" arrow="true" hint-size="auto,40px">Learn more</x-import>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:1.5rem;padding:2.5rem;background:var(--surface-white);border:0.5px solid var(--border-subtle);">
+        <div style="width:32px;height:32px;background:var(--accent-primary);flex-shrink:0;display:flex;align-items:center;justify-content:center;"><div style="width:10px;height:10px;background:var(--surface-white);"></div></div>
+        <div style="display:flex;flex-direction:column;gap:0.75rem;">
+          <x-import component-from-global-scope="CvetanichinDesignSystem_f4419f.Eyebrow" tone="muted" hint-size="auto,20px">Strategy Intensive</x-import>
+          <h3 style="font-family:var(--font-display);font-size:24px;font-weight:300;line-height:var(--leading-snug);color:var(--text-primary);">Focused three-day engagement</h3>
+          <p style="font-family:var(--font-body);font-size:var(--text-base);font-weight:300;line-height:var(--leading-relaxed);color:var(--text-secondary);">One question. One team. Three days to a decision and a plan. For organisations that need to move fast without moving wrong.</p>
+        </div>
+        <x-import component-from-global-scope="CvetanichinDesignSystem_f4419f.Button" variant="ghost" arrow="true" hint-size="auto,40px">Learn more</x-import>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:1.5rem;padding:2.5rem;background:var(--surface-white);border:0.5px solid var(--border-subtle);">
+        <div style="width:32px;height:32px;background:var(--accent-primary);flex-shrink:0;display:flex;align-items:center;justify-content:center;"><div style="width:10px;height:10px;background:var(--surface-white);"></div></div>
+        <div style="display:flex;flex-direction:column;gap:0.75rem;">
+          <x-import component-from-global-scope="CvetanichinDesignSystem_f4419f.Eyebrow" tone="muted" hint-size="auto,20px">Advisory Retainer</x-import>
+          <h3 style="font-family:var(--font-display);font-size:24px;font-weight:300;line-height:var(--leading-snug);color:var(--text-primary);">Senior thinking, on call</h3>
+          <p style="font-family:var(--font-body);font-size:var(--text-base);font-weight:300;line-height:var(--leading-relaxed);color:var(--text-secondary);">Monthly retained access for questions, reviews, and critical thinking at decisive moments. No overhead of a full engagement.</p>
+        </div>
+        <x-import component-from-global-scope="CvetanichinDesignSystem_f4419f.Button" variant="ghost" arrow="true" hint-size="auto,40px">Learn more</x-import>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- APPROACH + INSET QUOTE — subtle surface -->
+<section style="background:var(--surface-subtle);padding:var(--section-pad-y) var(--section-pad-x);">
+  <div style="max-width:var(--max-layout);margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:var(--section-gap);align-items:center;">
+
+    <div style="display:flex;flex-direction:column;gap:2rem;">
+      <x-import component-from-global-scope="CvetanichinDesignSystem_f4419f.Eyebrow" tone="muted" hint-size="auto,20px">Approach</x-import>
+      <h2 style="font-family:var(--font-display);font-size:clamp(24px,2.5vw,34px);font-weight:300;line-height:1.2;letter-spacing:-0.01em;color:var(--text-primary);">Strategy is only useful when it connects to what an organisation can actually do.</h2>
+      <p style="font-family:var(--font-body);font-size:var(--text-md);font-weight:300;line-height:var(--leading-loose);color:var(--text-secondary);max-width:460px;">Every engagement starts with a diagnostic. Not a template — a conversation. What is the actual decision? What is blocking movement? What exists that is not being used?</p>
+    </div>
+
+    <div style="padding:2.5rem;background:var(--surface-white);border:0.5px solid var(--border-subtle);border-left:2px solid var(--accent-primary);display:flex;flex-direction:column;gap:1.5rem;">
+      <p style="font-family:var(--font-display);font-size:var(--text-xl);font-weight:300;font-style:italic;line-height:var(--leading-normal);color:var(--text-primary);">"The work is not to write the strategy. The work is to make the decision that makes the strategy possible."</p>
+      <p style="font-family:var(--font-body);font-size:var(--text-xs);font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-accent);">— Vaska Cvetanoska</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section style="background:var(--surface-base);padding:var(--section-pad-y) var(--section-pad-x);">
+  <div style="max-width:var(--max-layout);margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:var(--section-gap);align-items:center;">
+
+    <div style="display:flex;flex-direction:column;gap:1.75rem;">
+      <x-import component-from-global-scope="CvetanichinDesignSystem_f4419f.Eyebrow" tone="muted" hint-size="auto,20px">About</x-import>
+      <h2 style="font-family:var(--font-display);font-size:var(--text-3xl);font-weight:300;line-height:var(--leading-snug);color:var(--text-primary);">Vaska Cvetanoska</h2>
+      <p style="font-family:var(--font-body);font-size:var(--text-md);font-weight:300;line-height:var(--leading-loose);color:var(--text-secondary);max-width:var(--max-text-body);">Write a clear, factual paragraph about your background and area of expertise. Name one specific kind of organisation you work best with. Not a credentials list — a sentence of honest context.</p>
+      <p style="font-family:var(--font-body);font-size:var(--text-md);font-weight:300;line-height:var(--leading-loose);color:var(--text-secondary);max-width:var(--max-text-body);">Second paragraph: what it is like to work with you. What you bring that is specific to you, not generic to consulting.</p>
+      <x-import component-from-global-scope="CvetanichinDesignSystem_f4419f.Button" variant="outline" arrow="true" hint-size="auto,48px" style="background-color: #000000">Enquire about availability</x-import>
+    </div>
+
+    <div style="position:relative;">
+      <div style="width:100%;max-width:440px;margin-left:auto;aspect-ratio:4/5;border:0.5px solid var(--border-emphasis);overflow:hidden;position:relative;">
+        <img src="../../assets/portrait.png" alt="Vaska Cvetanoska" style="width:100%;height:100%;object-fit:cover;object-position:center 10%;filter:sepia(5%) contrast(1.02);">
+      </div>
+      <div style="position:absolute;top:12px;left:12px;right:-12px;bottom:-12px;border:0.5px solid var(--border-strong);pointer-events:none;"></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CTA — inverse -->
+<section style="background:var(--surface-inverse);padding:var(--section-pad-y) var(--section-pad-x);">
+  <div style="max-width:var(--max-layout);margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:var(--section-gap);align-items:center;">
+
+    <h2 style="font-family:var(--font-display);font-size:clamp(32px,4vw,52px);font-weight:300;line-height:1.05;letter-spacing:var(--tracking-tight);color:var(--text-inverse);">Serious about your next move? <em style="font-style:italic;color:var(--accent-light);">Let's talk.</em></h2>
+
+    <div style="display:flex;flex-direction:column;gap:1.5rem;padding-left:var(--section-gap);border-left:0.5px solid var(--border-inverse);">
+      <p style="font-family:var(--font-body);font-size:var(--text-md);font-weight:300;line-height:var(--leading-loose);color:rgba(250,249,246,0.6);">Availability is limited. Engagements begin with a 30-minute diagnostic call — no commitment, no pitch.</p>
+      <x-import component-from-global-scope="CvetanichinDesignSystem_f4419f.Button" variant="accent" size="lg" arrow="true" hint-size="280px,56px">Request a diagnostic call</x-import>
+      <span style="font-family:var(--font-body);font-size:var(--text-xs);font-weight:300;letter-spacing:0.10em;color:rgba(250,249,246,0.35);">Response within 48 hours.</span>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer style="background:var(--surface-inverse);padding:3rem var(--section-pad-x);border-top:0.5px solid var(--border-inverse);">
+  <div style="max-width:var(--max-layout);margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem;">
+    <a href="../landing-page/LandingPage.dc.html" style="font-family:var(--font-display);font-size:15px;font-weight:300;letter-spacing:0.08em;color:var(--surface-white);opacity:0.65;">CVETANICHIN</a>
+    <div style="display:flex;gap:2rem;align-items:center;">
+      <a href="../self-improvement-page/SelfImprovementPage.dc.html" style="font-family:var(--font-ui);font-size:var(--text-xs);font-weight:500;letter-spacing:var(--tracking-widest);text-transform:uppercase;color:var(--accent-light);opacity:0.7;">Self-Improvement</a>
+    </div>
+    <span style="font-family:var(--font-body);font-size:var(--text-xs);font-weight:300;letter-spacing:0.15em;color:var(--surface-white);opacity:0.35;">© 2026 Cvetanichin.</span>
+  </div>
+</footer>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1440,&quot;height&quot;:900},&quot;accentPresence&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;expressive&quot;,&quot;options&quot;:[&quot;expressive&quot;,&quot;restrained&quot;,&quot;editorial&quot;],&quot;tsType&quot;:&quot;\&quot;expressive\&quot; | \&quot;restrained\&quot; | \&quot;editorial\&quot;&quot;},&quot;headlineStyle&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;soft-italic&quot;,&quot;options&quot;:[&quot;soft-italic&quot;,&quot;upright&quot;,&quot;direct&quot;],&quot;tsType&quot;:&quot;\&quot;soft-italic\&quot; | \&quot;upright\&quot; | \&quot;direct\&quot;&quot;},&quot;surfaceMood&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;minimal&quot;,&quot;options&quot;:[&quot;warm&quot;,&quot;minimal&quot;,&quot;night&quot;],&quot;tsType&quot;:&quot;\&quot;warm\&quot; | \&quot;minimal\&quot; | \&quot;night\&quot;&quot;}}">
+class Component extends DCLogic {
+
+  buildCss() {
+    const presence = this.props.accentPresence ?? 'expressive';
+    const headline  = this.props.headlineStyle  ?? 'soft-italic';
+    const surface   = this.props.surfaceMood    ?? 'warm';
+    let css = '';
+
+    // ── Accent presence ──────────────────────────────────────
+    // Default (expressive) = ochre gold — defined by consultancy.css, no overrides needed.
+    if (presence === 'restrained') {
+      // Shift accent to teal — the consultancy's secondary colour
+      css += `
+        :root {
+          --surface-accent:   #D3D0CB;
+          --accent-primary:   #587B7F;
+          --accent-light:     #8AABB0;
+          --accent-deep:      #3D5E62;
+          --accent-pale:      #E8F0F1;
+          --text-accent:      #3D5E62;
+          --border-subtle:    rgba(88,123,127,0.15);
+          --border-emphasis:  rgba(88,123,127,0.22);
+          --border-strong:    rgba(88,123,127,0.35);
+          --border-accent:    rgba(88,123,127,0.60);
+        }
+      `;
+    } else if (presence === 'editorial') {
+      // Strip to near-monochrome slate — authority through structure alone
+      css += `
+        :root {
+          --surface-accent:   #393E41;
+          --accent-primary:   #8A9298;
+          --accent-light:     #C4C0BA;
+          --accent-deep:      #536068;
+          --accent-pale:      #EDEAE5;
+          --text-accent:      #536068;
+          --border-subtle:    rgba(138,146,152,0.12);
+          --border-emphasis:  rgba(138,146,152,0.18);
+          --border-strong:    rgba(138,146,152,0.28);
+          --border-accent:    rgba(138,146,152,0.45);
+        }
+      `;
+    }
+
+    // ── Headline style ───────────────────────────────────────
+    if (headline === 'upright') {
+      css += `h1 em, h2 em, h3 em { font-style: normal !important; }`;
+    } else if (headline === 'direct') {
+      css += `
+        h1, h2, h3 {
+          font-family: 'Outfit', system-ui, sans-serif !important;
+          font-weight: 500 !important;
+          letter-spacing: -0.01em !important;
+          line-height: 1.1 !important;
+        }
+        h1 em, h2 em, h3 em {
+          font-style: normal !important;
+          font-weight: 600 !important;
+        }
+      `;
+    }
+
+    // ── Surface mood ─────────────────────────────────────────
+    if (surface === 'minimal') {
+      // Cooler, more neutral stone — less warmth, more precision
+      css += `
+        :root {
+          --surface-base:    #E4E1DC;
+          --surface-subtle:  #D8D5CF;
+          --surface-muted:   #CBC7C1;
+          --surface-inverse: #2A2E31;
+          --surface-white:   #F0EDE9;
+        }
+      `;
+    } else if (surface === 'night') {
+      // Deep near-black — Palette 1's near-black as ground
+      css += `
+        :root {
+          --surface-base:    #1E2019;
+          --surface-subtle:  #292C27;
+          --surface-muted:   #353830;
+          --surface-inverse: #111310;
+          --surface-white:   #292C27;
+          --text-primary:    #FAF9F6;
+          --text-secondary:  rgba(250,249,246,0.65);
+          --text-muted:      rgba(250,249,246,0.38);
+        }
+      `;
+    }
+
+    return css;
+  }
+
+  renderVals() {
+    const css = this.buildCss();
+    return {
+      tweakStyle: React.createElement('style', { key: 'tw', dangerouslySetInnerHTML: { __html: css } })
+    };
+  }
+}
+</script>
+</body>
+</html>

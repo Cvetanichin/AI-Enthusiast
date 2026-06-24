@@ -1,0 +1,30 @@
+/* Cvetanichin — Two-Domain Colour Architecture
+   ─────────────────────────────────────────────────────────────────────
+   The Cvetanichin brand operates across two distinct domains.
+   Each domain gets its own theme layer that overrides the shared semantic
+   tokens declared in tokens/colors.css.
+
+   HOW TO USE
+   ─────────────────────────────────────────────────────────────────────
+   In any HTML page or DC template, link styles.css FIRST, then one
+   domain theme:
+
+     Domain 1 — CSO Consultancy (B2B):
+       <link rel="stylesheet" href="/styles.css">
+       <link rel="stylesheet" href="/tokens/themes/consultancy.css">
+
+     Domain 2 — Self-Improvement / Digital Products (B2C):
+       <link rel="stylesheet" href="/styles.css">
+       <link rel="stylesheet" href="/tokens/themes/selfimprovement.css">
+
+   The domain layer re-declares ONLY the semantic aliases. Base primitives
+   (--color-rose, --color-ivory…) remain unchanged; components pick up the
+   new semantic values automatically.
+
+   ⚠ PALETTE STATUS
+   ─────────────────────────────────────────────────────────────────────
+   Palette 1 (Consultancy/B2B) colours are PENDING — user's palette PDF
+   could not be decoded. Provisional slate/moss values are used below.
+   Palette 3 (Self-Improvement/B2C) = the founding rose/ivory system.
+   Update both files when the user confirms the final hex values.
+*/

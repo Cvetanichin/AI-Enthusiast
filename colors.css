@@ -1,0 +1,112 @@
+/* Cvetanichin — Color Tokens
+   ──────────────────────────────────────────────────────────
+   Palette 3 (Self-Improvement B2C) is the base layer.
+   Domain themes in tokens/themes/ override the semantic
+   aliases for whichever domain a page belongs to.
+
+   THREE layers in this file:
+   1. Long-form primitives  --color-*         (source of truth)
+   2. Short-form aliases    --rose, --charcoal (used by component CSS)
+   3. Semantic aliases      --surface-*, --text-*, --accent-*, --border-*
+
+   Components MUST reference either the shorthand or semantic aliases —
+   never the long-form --color-* directly.                              */
+
+:root {
+
+  /* ══════════════════════════════════════════════════════
+     1. LONG-FORM PRIMITIVES — Palette 3 confirmed values
+     ══════════════════════════════════════════════════════ */
+
+  /* ── Pink family — primary accent ─────────────────────
+     Hot pink is the standout accent for the B2C domain.
+     On dark surfaces use --color-blush (light variant).   */
+  --color-pink:            #E55381;   /* primary CTA, eyebrows, dot markers             */
+  --color-pink-deep:       #C23368;   /* hover states, emphasis text                    */
+  --color-pink-light:      #EFA9AE;   /* blush — light accent on dark surfaces          */
+  --color-pink-pale:       #FCE8EE;   /* pale wash — very subtle tint surfaces          */
+
+  /* ── Deep family — inverse & text ─────────────────────
+     Purple-black replaces charcoal as the inverse anchor. */
+  --color-deep:            #190828;   /* primary text; inverse bg; darkest surface      */
+  --color-deep-mid:        #2E1A3A;   /* hover state on dark surfaces                   */
+  --color-mauve:           #685762;   /* body text; secondary content                   */
+  --color-sage:            #9B9987;   /* muted text; captions; borders                  */
+  --color-sage-light:      #C8C6B8;   /* warm neutral surface mid-tone                  */
+
+  /* ── Surface family ────────────────────────────────────
+     Warm blush-tinted surfaces replace ivory.             */
+  --color-surface:         #F5F0F1;   /* default body background                        */
+  --color-surface-alt:     #F8E0E2;   /* alternating sections                           */
+  --color-surface-mid:     #EDE5E6;   /* muted/deeper sections                          */
+  --color-white:           #FDF8F9;   /* warm white; cards, nav, hero highlights        */
+
+
+  /* ══════════════════════════════════════════════════════
+     2. SHORT-FORM ALIASES — match what component CSS uses
+        (keep these names even when domain changes, because
+        the theme files redefine the semantic layer only)
+     ══════════════════════════════════════════════════════ */
+
+  /* Accent — components use --rose / --rose-deep / --rose-light / --rose-pale */
+  --rose:                  var(--color-pink);         /* #E55381                        */
+  --rose-deep:             var(--color-pink-deep);    /* #C23368                        */
+  --rose-light:            var(--color-pink-light);   /* #EFA9AE                        */
+  --rose-pale:             var(--color-pink-pale);    /* #FCE8EE                        */
+
+  /* Dark text / inverse — components use --charcoal / --charcoal-mid / --charcoal-light */
+  --charcoal:              var(--color-deep);         /* #190828                        */
+  --charcoal-mid:          var(--color-mauve);        /* #685762                        */
+  --charcoal-light:        var(--color-sage);         /* #9B9987                        */
+
+  /* Surfaces — components use --ivory / --ivory-dark / --ivory-mid / --offwhite / --white */
+  --ivory:                 var(--color-surface);      /* #F5F0F1                        */
+  --ivory-dark:            var(--color-surface-alt);  /* #F8E0E2                        */
+  --ivory-mid:             var(--color-surface-mid);  /* #EDE5E6                        */
+  --offwhite:              var(--color-surface);      /* #F5F0F1 (alias)                */
+  --white:                 var(--color-white);        /* #FDF8F9                        */
+
+
+  /* ══════════════════════════════════════════════════════
+     3. SEMANTIC ALIASES — override these in theme files
+     ══════════════════════════════════════════════════════ */
+
+  /* Surfaces */
+  --surface-base:          var(--color-surface);
+  --surface-subtle:        var(--color-surface-alt);
+  --surface-muted:         var(--color-surface-mid);
+  --surface-inverse:       var(--color-deep);
+  --surface-white:         var(--color-white);
+  --surface-accent:        var(--color-pink);
+
+  /* Text */
+  --text-primary:          var(--color-deep);
+  --text-secondary:        var(--color-mauve);
+  --text-muted:            var(--color-sage);
+  --text-inverse:          var(--color-white);
+  --text-accent:           var(--color-pink-deep);
+
+  /* Accent */
+  --accent-primary:        var(--color-pink);
+  --accent-light:          var(--color-pink-light);
+  --accent-deep:           var(--color-pink-deep);
+  --accent-pale:           var(--color-pink-pale);
+
+  /* ── Borders — semantic ───────────────────────────────
+     Used by consuming pages and new components.           */
+  --border-subtle:         rgba(229, 83, 129, 0.13);
+  --border-emphasis:       rgba(229, 83, 129, 0.20);
+  --border-strong:         rgba(229, 83, 129, 0.32);
+  --border-accent:         rgba(229, 83, 129, 0.55);
+  --border-inverse:        rgba(253, 248, 249, 0.07);
+
+  /* ── Borders — shorthand (used by existing component CSS) ──
+     These match the names referenced in the .jsx files.   */
+  --border-rose:           rgba(229, 83, 129, 0.13);   /* = --border-subtle             */
+  --border-rose-strong:    rgba(229, 83, 129, 0.32);   /* = --border-strong             */
+  --border-rose-hover:     rgba(229, 83, 129, 0.50);   /* hover / interactive           */
+  --border-on-dark:        rgba(253, 248, 249, 0.07);  /* = --border-inverse            */
+
+  /* ── Border width shorthand (used by existing component CSS) ── */
+  --border-hair:           0.5px;   /* hairline — all decorative borders               */
+}

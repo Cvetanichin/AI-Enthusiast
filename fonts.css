@@ -1,0 +1,17 @@
+/* Cvetanichin — Webfont Declarations
+   ──────────────────────────────────────────────────────────
+   ⚠ FONT NOTE: Loaded via Google Fonts CDN.
+   For self-hosted production builds, replace with local @font-face
+   rules pointing to .woff2 files and host them under assets/fonts/.
+
+   Fraunces — variable optical-size display serif (opsz 9–144)
+     The headline voice of the brand. Soft, literary, feminine.
+     Use at weight 200–300 and opsz ~72 for display; opsz ~9 for body.
+     Italic variant signals emphasis — never bold (≥400) headlines.
+
+   Outfit — clean geometric sans-serif
+     The workhorse: body text, labels, buttons, UI, navigation.
+     Weights 300 (light body), 400 (default), 500 (UI/buttons), 600 (rare).
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,200;0,9..144,300;0,9..144,400;1,9..144,200;1,9..144,300;1,9..144,400&family=Outfit:wght@300;400;500;600&display=swap');

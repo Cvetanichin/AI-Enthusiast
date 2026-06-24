@@ -1,0 +1,20 @@
+<!-- @dsCard group="Spacing" viewport="700x250" name="Section rhythm in use" subtitle="80px vertical · 56px horizontal · alternating surfaces" -->
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><link rel="stylesheet" href="../styles.css">
+<style>
+  body{margin:0;font-family:var(--font-body);background:var(--ivory);color:var(--charcoal);}
+  .sec{padding:24px 28px;position:relative;}
+  .sec + .sec{border-top:0.5px solid var(--border-rose);}
+  .a{background:var(--ivory);}
+  .b{background:var(--ivory-dark);}
+  .c{background:var(--charcoal);}
+  .ey{font-size:9px;letter-spacing:0.25em;text-transform:uppercase;font-weight:500;margin-bottom:8px;}
+  .hd{font-family:var(--font-display);font-weight:300;font-size:20px;line-height:1.2;}
+  .tick{position:absolute;right:14px;top:14px;font-size:9px;letter-spacing:0.1em;color:var(--charcoal-light);}
+</style></head>
+<body>
+  <div class="sec a"><div class="tick">section-py 80 · px 56</div><div class="ey" style="color:var(--rose)">Who this is for</div><div class="hd" style="color:var(--charcoal)">For women rebuilding on their own terms</div></div>
+  <div class="sec b"><div class="ey" style="color:var(--rose)">How it works</div><div class="hd" style="color:var(--charcoal)">One section per day. Fourteen days.</div></div>
+  <div class="sec c"><div class="ey" style="color:var(--rose-light)">What you will have</div><div class="hd" style="color:var(--white)">Four outputs. Two weeks. One product live.</div></div>
+</body></html>

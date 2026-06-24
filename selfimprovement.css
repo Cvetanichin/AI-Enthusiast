@@ -1,0 +1,93 @@
+/* ─────────────────────────────────────────────────────────────────────
+   Domain 2 — Self-Improvement / Digital Products  (B2C)
+   Palette 3 · Confirmed hex values from palette (3).pdf
+
+   Five-colour palette: deep purple-black · muted mauve · warm sage ·
+   soft blush · hot pink.
+
+   Richer and more vibrant than the provisional rose/ivory system.
+   The hot pink (#E55381) is the standout accent — bold but not cheap
+   when paired with the deep #190828 ground and muted sage neutrals.
+
+   Products in this domain:
+     • The First Offer Kit (€37 PDF guide)
+     • Future courses, templates, lead magnets, email courses
+
+   Semantic mapping:
+     Surfaces  → light tints derived from blush + sage
+     Accent    → hot pink primary / blush light / mauve secondary
+     Inverse   → deep purple-black (#190828)
+     Neutral   → sage (#9B9987) for muted text and mid-surfaces
+   ───────────────────────────────────────────────────────────────────── */
+
+:root {
+
+  /* ── Brand identity ─────────────────────────────────── */
+  --domain-name:            "Self-Improvement";
+  --domain-audience:        "B2C — women rebuilding income";
+
+  /* ── Primitive palette — Palette 3 confirmed values ─── */
+
+  /* Deep purple-black — inverse anchor */
+  --p3-deep:                #190828;   /* inverse surfaces, primary text on light bg  */
+  --p3-deep-mid:            #2E1A3A;   /* interpolated — hover on inverse surfaces    */
+
+  /* Mauve — warm dark neutral */
+  --p3-mauve:               #685762;   /* secondary text, body on light surfaces      */
+  --p3-mauve-light:         #9B8A95;   /* lighter mauve (interpolated)                */
+
+  /* Sage/taupe — warm neutral ground */
+  --p3-sage:                #9B9987;   /* muted text, borders, subtle fills           */
+  --p3-sage-light:          #C8C6B8;   /* lighter sage surface                        */
+
+  /* Blush — light accent / surface tint */
+  --p3-blush:               #EFA9AE;   /* soft blush — light accent surfaces          */
+  --p3-blush-pale:          #FBF0F1;   /* near-white blush tint — card backgrounds    */
+  --p3-blush-light:         #F8E0E2;   /* very subtle blush surface                   */
+
+  /* Hot pink — primary accent */
+  --p3-pink:                #E55381;   /* primary CTA, eyebrows, dot markers          */
+  --p3-pink-deep:           #C23368;   /* hover states, emphasis text                 */
+  --p3-pink-light:          #EFA9AE;   /* alias to blush on dark backgrounds          */
+  --p3-pink-pale:           #FCE8EE;   /* very subtle tint                            */
+
+  /* Warm white */
+  --p3-white:               #FDF8F9;   /* warm white — cards, nav, primary bg         */
+
+  /* ── Semantic overrides ─────────────────────────────── */
+
+  /* Surfaces */
+  --surface-base:           #F5F0F1;   /* warm blush-white — default body background  */
+  --surface-subtle:         var(--p3-blush-light);    /* #F8E0E2 — alt sections       */
+  --surface-muted:          #EDE5E6;   /* slightly deeper warm surface                */
+  --surface-inverse:        var(--p3-deep);            /* #190828 — dark sections      */
+  --surface-white:          var(--p3-white);           /* #FDF8F9 — card backgrounds   */
+  --surface-accent:         var(--p3-pink);            /* #E55381 — accent fills       */
+
+  /* Text */
+  --text-primary:           var(--p3-deep);            /* #190828                      */
+  --text-secondary:         var(--p3-mauve);           /* #685762                      */
+  --text-muted:             var(--p3-sage);            /* #9B9987                      */
+  --text-inverse:           var(--p3-white);           /* #FDF8F9                      */
+  --text-accent:            var(--p3-pink-deep);       /* #C23368                      */
+
+  /* Accent */
+  --accent-primary:         var(--p3-pink);            /* #E55381                      */
+  --accent-light:           var(--p3-blush);           /* #EFA9AE                      */
+  --accent-deep:            var(--p3-pink-deep);       /* #C23368                      */
+  --accent-pale:            var(--p3-pink-pale);       /* #FCE8EE                      */
+
+  /* Borders — pink-tinted */
+  --border-subtle:          rgba(229, 83, 129, 0.13);
+  --border-emphasis:        rgba(229, 83, 129, 0.20);
+  --border-strong:          rgba(229, 83, 129, 0.32);
+  --border-accent:          rgba(229, 83, 129, 0.55);
+  --border-inverse:         rgba(253, 248, 249, 0.07);   /* on deep bg                */
+
+  /* Accent foreground — text colour on accent-filled surfaces (hot pink is dark → white text) */
+  --accent-fg:              var(--surface-white);  /* #FDF8F9 on hot pink #E55381 — high contrast */
+
+  /* Fonts — unchanged between domains */
+  --font-display:           'Fraunces', Georgia, serif;
+  --font-body:              'Outfit', system-ui, sans-serif;
+}

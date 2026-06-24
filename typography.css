@@ -1,0 +1,51 @@
+/* Cvetanichin — Typography Tokens
+   ──────────────────────────────────────────────────────────
+   Two fonts only. Serif for the voice; sans for the system.
+   Restraint is the rule: no more than three type sizes on    
+   any single surface. Never bold display headlines.          */
+
+:root {
+
+  /* ── Font Families ────────────────────────────────────── */
+  --font-serif:      'Fraunces', Georgia, 'Times New Roman', serif;
+  --font-sans:       'Outfit', system-ui, -apple-system, sans-serif;
+
+  /* Semantic aliases */
+  --font-display:    var(--font-serif);   /* hero headlines, section h2s, prices     */
+  --font-body:       var(--font-sans);    /* paragraphs, descriptions, bios          */
+  --font-ui:         var(--font-sans);    /* buttons, nav, form labels               */
+  --font-label:      var(--font-sans);    /* section eyebrows, microcopy, captions   */
+
+  /* ── Type Scale ───────────────────────────────────────── */
+  --text-xs:         10px;               /* section labels (ALL CAPS, tracked)       */
+  --text-sm:         11px;               /* microcopy, attribution, footer           */
+  --text-base:       13px;               /* card text, secondary body                */
+  --text-md:         14px;               /* primary body text                        */
+  --text-lg:         15px;               /* emphasized body, step titles             */
+  --text-xl:         21px;               /* taglines, hero sub-headings              */
+  --text-2xl:        28px;               /* stat numbers, creator name               */
+  --text-3xl:        32px;               /* section headings (desktop)               */
+  --text-4xl:        38px;               /* price display, large sub-headings        */
+  --text-5xl:        48px;               /* CTA headlines                            */
+  --text-display:    clamp(48px, 5.5vw, 72px);   /* hero display                    */
+
+  /* ── Line Heights ─────────────────────────────────────── */
+  --leading-tight:   1.0;    /* display headlines — editorial density                */
+  --leading-snug:    1.15;   /* sub-headings                                         */
+  --leading-normal:  1.55;   /* taglines, hero taglines                              */
+  --leading-relaxed: 1.75;   /* card text, step descriptions, lists                  */
+  --leading-loose:   1.9;    /* body text — slow, calm reading pace                  */
+
+  /* ── Letter Spacing ───────────────────────────────────── */
+  --tracking-tight:  -0.02em;   /* display headlines                                 */
+  --tracking-normal:  0em;      /* standard                                          */
+  --tracking-wide:    0.06em;   /* card title labels                                 */
+  --tracking-wider:   0.10em;   /* button labels, nav CTA                            */
+  --tracking-widest:  0.25em;   /* section eyebrow labels                            */
+
+  /* ── Font Weights ─────────────────────────────────────── */
+  --weight-light:    300;   /* body text, hero taglines, most Fraunces headlines      */
+  --weight-regular:  400;   /* attribution, footer, standard UI                      */
+  --weight-medium:   500;   /* buttons, step titles, card names, nav CTA             */
+  --weight-semibold: 600;   /* available but rarely used — reserved for data callouts */
+}

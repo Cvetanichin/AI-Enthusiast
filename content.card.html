@@ -1,0 +1,60 @@
+<!-- @dsCard group="Components" viewport="700x330" name="Labels, Badges & Dividers" subtitle="Eyebrows, label chips, and soft rules" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../../styles.css">
+<style>
+  body{margin:0;background:var(--ivory);font-family:var(--font-body);padding:32px;color:var(--charcoal);}
+  .stack{display:flex;flex-direction:column;gap:28px;max-width:560px;}
+  .row{display:flex;flex-wrap:wrap;gap:14px;align-items:center;}
+  .cap{font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--rose);margin:0 0 12px;font-weight:500;}
+  .dark{background:var(--charcoal);padding:18px 20px;}
+</style>
+</head>
+<body>
+  <div id="root"></div>
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+  <script src="../../_ds_bundle.js"></script>
+  <script type="text/babel">
+    const { Eyebrow, Badge, Divider } = window.CvetanichinDesignSystem_f4419f;
+    function Demo() {
+      return (
+        <div className="stack">
+          <div>
+            <p className="cap">Eyebrows</p>
+            <div className="row">
+              <Eyebrow tone="rose">Who this is for</Eyebrow>
+              <Eyebrow tone="muted">How it works</Eyebrow>
+            </div>
+            <div className="dark row" style={{marginTop:'12px'}}>
+              <Eyebrow tone="rose-light">What you will have</Eyebrow>
+              <Eyebrow tone="on-dark">Product formats</Eyebrow>
+            </div>
+          </div>
+          <div>
+            <p className="cap">Badges</p>
+            <div className="row">
+              <Badge>One-time</Badge>
+              <Badge variant="outline" dot>Instant delivery</Badge>
+              <Badge variant="charcoal">New</Badge>
+              <Badge variant="soft">€37–€57</Badge>
+            </div>
+          </div>
+          <div>
+            <p className="cap">Dividers</p>
+            <div style={{display:'flex',flexDirection:'column',gap:'18px'}}>
+              <Divider variant="gradient" />
+              <Divider variant="rule" />
+              <Divider variant="hair" />
+            </div>
+          </div>
+        </div>
+      );
+    }
+    ReactDOM.createRoot(document.getElementById('root')).render(<Demo/>);
+  </script>
+</body>
+</html>

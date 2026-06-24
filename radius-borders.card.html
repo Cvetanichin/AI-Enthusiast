@@ -1,0 +1,21 @@
+<!-- @dsCard group="Spacing" viewport="700x180" name="Radius & borders" subtitle="Square editorial corners, thin warm hairlines" -->
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><link rel="stylesheet" href="../styles.css">
+<style>
+  body{margin:0;font-family:var(--font-body);background:var(--ivory);padding:24px 32px;color:var(--charcoal);}
+  .row{display:flex;gap:20px;flex-wrap:wrap;}
+  .demo{display:flex;flex-direction:column;gap:8px;align-items:center;}
+  .box{width:88px;height:64px;background:var(--white);border:0.5px solid var(--border-rose-strong);}
+  .lab{font-size:10px;color:var(--charcoal-light);letter-spacing:0.03em;text-align:center;}
+  .v{font-size:11px;color:var(--charcoal);font-weight:500;}
+</style></head>
+<body>
+  <div class="row">
+    <div class="demo"><div class="box" style="border-radius:0"></div><span class="v">radius-none</span><span class="lab">default · cards, buttons</span></div>
+    <div class="demo"><div class="box" style="border-radius:2px"></div><span class="v">radius-xs</span><span class="lab">inputs, soft cards</span></div>
+    <div class="demo"><div class="box" style="border-radius:4px"></div><span class="v">radius-sm</span><span class="lab">rare</span></div>
+    <div class="demo"><div class="box" style="border-width:1px;border-color:var(--border-rose-hover)"></div><span class="v">border-thin</span><span class="lab">visible rule</span></div>
+    <div class="demo"><div class="box" style="border-left:2px solid var(--rose)"></div><span class="v">border-accent</span><span class="lab">quote rule</span></div>
+  </div>
+</body></html>

@@ -1,0 +1,44 @@
+/* Cvetanichin — Spacing Tokens
+   ──────────────────────────────────────────────────────────
+   4px base grid. Sections breathe generously — this brand  
+   earns trust through open space, not information density.  */
+
+:root {
+
+  /* ── Base Scale (4px grid) ────────────────────────────── */
+  --space-0:    0;
+  --space-1:    4px;
+  --space-2:    8px;
+  --space-3:    12px;
+  --space-4:    16px;
+  --space-5:    20px;
+  --space-6:    24px;
+  --space-8:    32px;
+  --space-10:   40px;
+  --space-12:   48px;
+  --space-14:   56px;
+  --space-16:   64px;
+  --space-20:   80px;
+  --space-24:   96px;
+
+  /* ── Section Rhythm ───────────────────────────────────── */
+  /* Generous, editorial breathing room. 5rem × 3.5rem.     */
+  --section-pad-x:   3.5rem;   /* 56px horizontal — standard section padding          */
+  --section-pad-y:   5rem;     /* 80px vertical   — standard section padding          */
+  --section-gap:     4rem;     /* 64px — gap between grid columns in sections         */
+
+  /* ── Component Gaps ──────────────────────────────────── */
+  --gap-xs:    0.25rem;   /* 4px   — between tightly related inline elements          */
+  --gap-sm:    0.6rem;    /* 10px  — between label and value, dot and text            */
+  --gap-md:    1rem;      /* 16px  — between card elements                            */
+  --gap-lg:    1.25rem;   /* 20px  — between body paragraphs                         */
+  --gap-xl:    2rem;      /* 32px  — between major component sections                 */
+  --gap-2xl:   2.5rem;    /* 40px  — header to content in sections                   */
+  --gap-3xl:   3.5rem;    /* 56px  — between grid columns (compact)                  */
+
+  /* ── Text Constraints ────────────────────────────────── */
+  --max-text-narrow:  300px;   /* constrained card/hero body text                     */
+  --max-text-body:    480px;   /* standard body copy block                            */
+  --max-text-quote:   600px;   /* pull quote max width                                */
+  --max-layout:      1280px;   /* overall layout maximum                              */
+}
