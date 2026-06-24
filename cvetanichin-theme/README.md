@@ -14,7 +14,7 @@ Custom WordPress theme for cvetanichin.org.
 2. Activate the theme in Appearance > Themes
 3. Install and activate ACF Pro
 4. Install and activate Yoast SEO, WPForms, WP Rocket, UpdraftPlus
-5. Add self-hosted font .woff2 files to `assets/fonts/`
+5. Fonts are included in `assets/fonts/` — no additional download needed
 6. Create pages and set the `page_domain` ACF field on each
 
 ## Domain Switching
@@ -33,8 +33,17 @@ complete architecture, template map, design tokens, plugin stack, and launch che
 ## Development
 
 No build step required. Edit PHP/CSS/JS directly.
-For self-hosted fonts, download Fraunces (weight 200, 300 italic) and Outfit
-(weight 300, 400, 500) from Google Fonts and place .woff2 files in `assets/fonts/`.
+
+### Fonts
+
+Self-hosted variable fonts are included in `assets/fonts/`:
+
+| File | Family | Axis |
+|---|---|---|
+| `Fraunces-Italic-VariableFont.woff2` | Fraunces | weight 100–900, italic |
+| `Outfit-VariableFont.woff2` | Outfit | weight 100–900 |
+
+`tokens.css` uses a single `@font-face` per family with `font-weight: 100 900` (variable font syntax), replacing the previous 5-file static approach. The Fraunces italic file is preloaded via `<link rel="preload">` in `enqueue.php` for LCP.
 
 ## Non-Negotiables
 

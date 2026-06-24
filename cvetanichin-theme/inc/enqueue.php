@@ -26,7 +26,7 @@ function cvet_enqueue_assets(): void {
     // Preload hero font for LCP
     add_action( 'wp_head', function() {
         echo '<link rel="preload" as="font" type="font/woff2" crossorigin href="'
-            . esc_url( CVET_URI . '/assets/fonts/fraunces-italic-200.woff2' )
+            . esc_url( CVET_URI . '/assets/fonts/Fraunces-Italic-VariableFont.woff2' )
             . '">' . PHP_EOL;
     }, 1 );
 
