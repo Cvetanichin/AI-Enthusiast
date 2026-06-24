@@ -1,0 +1,15 @@
+/* =============================================================
+   Cvetanichin — Self-Improvement Theme (Domain 2)
+   This is the :root default in tokens.css.
+   This file documents D2-specific structural overrides.
+   ============================================================= */
+
+/* D2: split hero accent column uses hot pink */
+body.domain-selfimprovement .hero--split .hero__accent-col {
+  background: var(--cvet-accent-primary);
+}
+
+/* D2: stats strip uses deep purple */
+body.domain-selfimprovement .stats-row {
+  background: var(--cvet-surface-inverse);
+}

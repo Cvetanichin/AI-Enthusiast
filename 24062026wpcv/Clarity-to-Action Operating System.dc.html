@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+<template id="__bundler_thumbnail" data-bg-color="#E2DED9">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <!-- Split hero -->
+    <rect width="600" height="800" fill="#A87C7C"/>
+    <rect x="600" width="600" height="800" fill="#E2DED9"/>
+    <!-- Headline lines on left -->
+    <rect x="60" y="320" width="340" height="14" rx="2" fill="rgba(253,248,249,0.9)"/>
+    <rect x="60" y="344" width="280" height="14" rx="2" fill="rgba(253,248,249,0.9)"/>
+    <rect x="60" y="368" width="220" height="14" rx="2" fill="rgba(253,248,249,0.55)"/>
+    <!-- CTA button -->
+    <rect x="60" y="420" width="180" height="40" rx="2" fill="rgba(253,248,249,0.25)"/>
+    <!-- Product cover on right — simplified book shape -->
+    <rect x="720" y="160" width="260" height="340" rx="2" fill="#C4B5B5" opacity="0.7"/>
+    <rect x="735" y="175" width="230" height="6" rx="1" fill="rgba(45,30,30,0.4)"/>
+    <rect x="735" y="190" width="180" height="4" rx="1" fill="rgba(45,30,30,0.25)"/>
+    <!-- Wordmark -->
+    <rect x="60" y="60" width="120" height="8" rx="1" fill="rgba(253,248,249,0.5)"/>
+  </svg>
+</template>
+</head>
+<body>
+<x-dc>
+
+<helmet>
+  <script src="./ds-base.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--surface-base); color: var(--text-primary); font-family: var(--font-body); font-weight: 300; -webkit-font-smoothing: antialiased; }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
+    .reveal { animation: fadeUp 0.75s ease both; }
+    .reveal-2 { animation: fadeUp 0.75s 0.15s ease both; }
+    .reveal-3 { animation: fadeUp 0.75s 0.3s ease both; }
+    .reveal-4 { animation: fadeUp 0.75s 0.45s ease both; }
+    .stage-card:hover { transform: translateY(-3px); border-color: var(--accent-primary) !important; transition: transform 0.3s ease, border-color 0.3s ease; }
+    .faq-item { border-bottom: 0.5px solid var(--border-subtle); }
+  </style>
+</helmet>
+
+{{ tweakStyle }}
+
+<!-- NAV -->
+<nav style="position:sticky;top:0;z-index:100;background:var(--surface-white);backdrop-filter:blur(12px);border-bottom:0.5px solid var(--border-subtle);">
+  <div style="max-width:var(--max-layout);margin:0 auto;padding:0 var(--section-pad-x);height:64px;display:flex;align-items:center;justify-content:space-between;">
+    <span style="font-family:var(--font-display);font-size:16px;font-weight:300;letter-spacing:0.08em;color:var(--text-primary);">CVETANICHIN</span>
+    <x-import component-from-global-scope="CvetanichinDesignSystem_f4419f.Button" variant="primary" size="sm" arrow="true" href="#cta" hint-size="auto,40px">Get the workbook</x-import>
+  </div>
+</nav>
+
+<!-- HERO — split: accent left · subtle right -->
+<section style="display:grid;grid-template-columns:1fr 1fr;min-height:90vh;">
+
+  <div style="background:var(--surface-accent);padding:var(--section-pad-y) var(--section-pad-x);display:flex;flex-direction:column;justify-content:flex-end;gap:2rem;">
+    <div class="reveal">
+      <x-import component-from-global-scope="CvetanichinDesignSystem_f4419f.Eyebrow" tone="on-dark" hint-size="auto,20px">The Signature Workbook</x-import>
+    </div>
+    <h1 class="reveal-2" style="font-family:var(--font-display);font-size:var(--text-display);font-weight:300;line-height:1.0;letter-spacing:var(--tracking-tight);color:var(--surface-white);">Most clarity tools<br>stop at insight.<br><em style="font-style:italic;">This one doesn't.</em></h1>
+    <p class="reveal-3" style="font-family:var(--font-body);font-size:var(--text-md);font-weight:300;line-height:var(--leading-loose);color:rgba(253,248,249,0.72);max-width:380px;">A structured 4-stage workbook that turns honest self-reflection into a real, checkable 90-day plan — built on the same discipline used to design EU-funded projects.</p>
+    <div class="reveal-4" style="display:flex;flex-direction:column;gap:0.75rem;align-items:flex-start;">
+      <x-import component-from-global-scope="CvetanichinDesignSystem_f4419f.Button" variant="primary" size="lg" arrow="true" href="#cta" hint-size="320px,56px">Get the workbook — €79</x-import>
+      <span style="font-family:var(--font-body);font-size:11px;font-weight:300;letter-spacing:0.10em;color:rgba(253,248,249,0.5);">Digital download (.docx). Fillable on desktop or Google Docs.</span>
+    </div>
+  </div>
+
+  <div style="background:var(--surface-subtle);padding:var(--section-pad-y) var(--section-pad-x);display:flex;flex-direction:column;justify-content:center;align-items:center;gap:2.5rem;">
+    <div style="width:100%;max-width:480px;position:relative;">
+      <div style="width:100%;border:0.5px solid var(--border-emphasis);overflow:hidden;box-shadow:0 4px 40px rgba(45,45,45,0.10);">
+        <img src="uploads/gumroad-cover.png" alt="The Clarity-to-Action Operating System workbook cover" style="width:100%;height:auto;display:block;filter:sepia(5%) contrast(1.02);">
+      </div>
+      <div style="position:absolute;top:12px;left:12px;right:-12px;bottom:-12px;border:0.5px solid var(--border-strong);pointer-events:none;z-index:-1;"></div>
+    </div>
+    <div style="text-align:center;border-top:0.5px solid var(--border-subtle);padding-top:1.5rem;width:100%;max-width:480px;">
+      <p style="font-family:var(--font-display);font-size:52px;font-weight:300;line-height:1;color:var(--text-primary);">€79</p>
+      <p style="font-family:var(--font-body);font-size:var(--text-xs);font-weight:300;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-muted);margin-top:8px;">One payment. Instant access.</p>
+    </div>
+  </div>
+
+</section>
+
+<!-- STATS STRIP — inverse -->
+<section style="background:var(--surface-inverse);padding:4rem var(--section-pad-x);">
+  <div style="max-width:var(--max-layout);margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:var(--section-gap);">
+
+    <div style="display:flex;flex-direction:column;gap:0.5rem;padding-right:var(--section-gap);border-right:0.5px solid var(--border-inverse);">
+      <p style="font-family:var(--font-display);font-size:48px;font-weight:300;line-height:1;color:var(--accent-light);">52</p>
+      <p style="font-family:var(--font-body);font-size:var(--text-xs);font-weight:500;letter-spacing:var(--tracking-widest);text-transform:uppercase;color:rgba(253,248,249,0.4);">pages</p>
+      <p style="font-family:var(--font-body);font-size:var(--text-base);font-weight:300;line-height:var(--leading-relaxed);color:rgba(253,248,249,0.5);margin-top:0.5rem;">Fully guided and fillable</p>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:0.5rem;padding-right:var(--section-gap);border-right:0.5px solid var(--border-inverse);">
+      <p style="font-family:var(--font-display);font-size:48px;font-weight:300;line-height:1;color:var(--accent-light);">4</p>
+      <p style="font-family:var(--font-body);font-size:var(--text-xs);font-weight:500;letter-spacing:var(--tracking-widest);text-transform:uppercase;color:rgba(253,248,249,0.4);">stages</p>
+      <p style="font-family:var(--font-body);font-size:var(--text-base);font-weight:300;line-height:var(--leading-relaxed);color:rgba(253,248,249,0.5);margin-top:0.5rem;">One continuous arc</p>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:0.5rem;padding-right:var(--section-gap);border-right:0.5px solid var(--border-inverse);">
+      <p style="font-family:var(--font-display);font-size:48px;font-weight:300;line-height:1;color:var(--accent-light);">90</p>
+      <p style="font-family:var(--font-body);font-size:var(--text-xs);font-weight:500;letter-spacing:var(--tracking-widest);text-transform:uppercase;color:rgba(253,248,249,0.4);">days</p>
+      <p style="font-family:var(--font-body);font-size:var(--text-base);font-weight:300;line-height:var(--leading-relaxed);color:rgba(253,248,249,0.5);margin-top:0.5rem;">Real plan with built-in accountability</p>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:0.5rem;">
+      <p style="font-family:var(--font-display);font-size:48px;font-weight:300;line-height:1;color:var(--accent-light);">60–90</p>
+      <p style="font-family:var(--font-body);font-size:var(--text-xs);font-weight:500;letter-spacing:var(--tracking-widest);text-transform:uppercase;color:rgba(253,248,249,0.4);">minutes</p>
+      <p style="font-family:var(--font-body);font-size:var(--text-base);font-weight:300;line-height:var(--leading-relaxed);color:rgba(253,248,249,0.5);margin-top:0.5rem;">To complete Stages 1–3 in one sitting</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- THE FOUR STAGES -->
+<section style="background:var(--surface-base);padding:var(--section-pad-y) var(--section-pad-x);">
+  <div style="max-width:var(--max-layout);margin:0 auto;display:flex;flex-direction:column;gap:3.5rem;">
+
+    <div style="display:flex;flex-direction:column;gap:1.25rem;">
+      <x-import component-from-global-scope="CvetanichinDesignSystem_f4419f.Eyebrow" tone="rose" hint-size="auto,20px">What you work through</x-import>
+      <h2 style="font-family:var(--font-display);font-size:var(--text-3xl);font-weight:300;line-height:var(--leading-snug);letter-spacing:var(--tracking-tight);color:var(--text-primary);max-width:560px;">Four stages. One continuous arc from <em style="font-style:italic;">reflection to plan.</em></h2>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;">
+
+      <div class="stage-card" style="display:flex;flex-direction:column;gap:1.25rem;padding:2rem;background:var(--surface-white);border:0.5px solid var(--border-subtle);transition:transform 0.3s ease,border-color 0.3s ease;">
+        <div style="width:32px;height:32px;background:var(--accent-primary);flex-shrink:0;display:flex;align-items:center;justify-content:center;"><div style="width:10px;height:10px;background:var(--surface-white);"></div></div>
+        <p style="font-family:var(--font-body);font-size:var(--text-xs);font-weight:500;letter-spacing:var(--tracking-widest);text-transform:uppercase;color:var(--text-muted);">Stage 01</p>
+        <h3 style="font-family:var(--font-display);font-size:var(--text-xl);font-weight:300;line-height:var(--leading-snug);color:var(--text-primary);">Life Audit</h3>
+        <p style="font-family:var(--font-body);font-size:var(--text-base);font-weight:300;line-height:var(--leading-relaxed);color:var(--text-secondary);">Score seven life domains honestly. Identify your three lowest and trace exactly when the drift started — not when you noticed, but when it actually began.</p>
+      </div>
+
+      <div class="stage-card" style="display:flex;flex-direction:column;gap:1.25rem;padding:2rem;background:var(--surface-white);border:0.5px solid var(--border-subtle);transition:transform 0.3s ease,border-color 0.3s ease;">
+        <div style="width:32px;height:32px;background:var(--accent-primary);flex-shrink:0;display:flex;align-items:center;justify-content:center;"><div style="width:10px;height:10px;background:var(--surface-white);"></div></div>
+        <p style="font-family:var(--font-body);font-size:var(--text-xs);font-weight:500;letter-spacing:var(--tracking-widest);text-transform:uppercase;color:var(--text-muted);">Stage 02</p>
+        <h3 style="font-family:var(--font-display);font-size:var(--text-xl);font-weight:300;line-height:var(--leading-snug);color:var(--text-primary);">Energy Diagnosis</h3>
+        <p style="font-family:var(--font-body);font-size:var(--text-base);font-weight:300;line-height:var(--leading-relaxed);color:var(--text-secondary);">Most burnout advice fails because it treats all burnout as one condition. This stage identifies which of four distinct patterns you're actually in — because each has a different fix.</p>
+      </div>
+
+      <div class="stage-card" style="display:flex;flex-direction:column;gap:1.25rem;padding:2rem;background:var(--surface-white);border:0.5px solid var(--border-subtle);transition:transform 0.3s ease,border-color 0.3s ease;">
+        <div style="width:32px;height:32px;background:var(--accent-primary);flex-shrink:0;display:flex;align-items:center;justify-content:center;"><div style="width:10px;height:10px;background:var(--surface-white);"></div></div>
+        <p style="font-family:var(--font-body);font-size:var(--text-xs);font-weight:500;letter-spacing:var(--tracking-widest);text-transform:uppercase;color:var(--text-muted);">Stage 03</p>
+        <h3 style="font-family:var(--font-display);font-size:var(--text-xl);font-weight:300;line-height:var(--leading-snug);color:var(--text-primary);">Values Clarification</h3>
+        <p style="font-family:var(--font-body);font-size:var(--text-base);font-weight:300;line-height:var(--leading-relaxed);color:var(--text-secondary);">Not a generic "discover your values" exercise. A forced-ranking process that shows which values you're under-investing in right now, and where that gap is creating the most friction.</p>
+      </div>
+
+      <div class="stage-card" style="display:flex;flex-direction:column;gap:1.25rem;padding:2rem;background:var(--surface-white);border:0.5px solid var(--border-subtle);transition:transform 0.3s ease,border-color 0.3s ease;">
+        <div style="width:32px;height:32px;background:var(--accent-primary);flex-shrink:0;display:flex;align-items:center;justify-content:center;"><div style="width:10px;height:10px;background:var(--surface-white);"></div></div>
+        <p style="font-family:var(--font-body);font-size:var(--text-xs);font-weight:500;letter-spacing:var(--tracking-widest);text-transform:uppercase;color:var(--text-muted);">Stage 04</p>
+        <h3 style="font-family:var(--font-display);font-size:var(--text-xl);font-weight:300;line-height:var(--leading-snug);color:var(--text-primary);">The 90-Day Plan</h3>
+        <p style="font-family:var(--font-body);font-size:var(--text-base);font-weight:300;line-height:var(--leading-relaxed);color:var(--text-secondary);">The stage almost every other workbook skips. One clear objective, three outcome areas, checkable indicators, a month-by-month map, and pre-written Day 45 and Day 90 checkpoints.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PULL QUOTE -->
+<x-import component-from-global-scope="CvetanichinDesignSystem_f4419f.Quote" variant="accent" attribution="— The Clarity-to-Action Operating System" hint-size="100%,260px">An audit without a plan is just an expensive diary entry.</x-import>
+
+<!-- WHAT'S INSIDE -->
+<section style="background:var(--surface-base);padding:var(--section-pad-y) var(--section-pad-x);">
+  <div style="max-width:var(--max-layout);margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:var(--section-gap);align-items:start;">
+
+    <div style="display:flex;flex-direction:column;gap:1.5rem;">
+      <x-import component-from-global-scope="CvetanichinDesignSystem_f4419f.Eyebrow" tone="rose" hint-size="auto,20px">What's inside</x-import>
+      <h2 style="font-family:var(--font-display);font-size:var(--text-3xl);font-weight:300;line-height:var(--leading-snug);letter-spacing:var(--tracking-tight);color:var(--text-primary);">Everything you need to<br><em style="font-style:italic;">actually finish the work.</em></h2>
+      <p style="font-family:var(--font-body);font-size:var(--text-md);font-weight:300;line-height:var(--leading-loose);color:var(--text-secondary);max-width:var(--max-text-body);">Built with the same rigor used to design EU-funded development projects — where a clear problem statement must become a Theory of Change, must become a plan with indicators you can check.</p>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:0;">
+      <div style="display:flex;flex-direction:column;gap:1rem;padding:1.75rem 0;border-bottom:0.5px solid var(--border-subtle);">
+        <div style="display:flex;align-items:flex-start;gap:1.25rem;">
+          <div style="flex-shrink:0;margin-top:4px;width:8px;height:8px;border-radius:50%;border:0.5px solid var(--accent-primary);background:transparent;"></div>
+          <div>
+            <p style="font-family:var(--font-body);font-size:var(--text-base);font-weight:500;color:var(--text-primary);margin-bottom:0.35rem;">52 pages, fully guided and fillable</p>
+            <p style="font-family:var(--font-body);font-size:var(--text-base);font-weight:300;line-height:var(--leading-relaxed);color:var(--text-secondary);">Complete exercises you write directly into the document, not a passive read.</p>
+          </div>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:1rem;padding:1.75rem 0;border-bottom:0.5px solid var(--border-subtle);">
+        <div style="display:flex;align-items:flex-start;gap:1.25rem;">
+          <div style="flex-shrink:0;margin-top:4px;width:8px;height:8px;border-radius:50%;border:0.5px solid var(--accent-primary);background:transparent;"></div>
+          <div>
+            <p style="font-family:var(--font-body);font-size:var(--text-base);font-weight:500;color:var(--text-primary);margin-bottom:0.35rem;">A complete worked example throughout</p>
+            <p style="font-family:var(--font-body);font-size:var(--text-base);font-weight:300;line-height:var(--leading-relaxed);color:var(--text-secondary);">Maria, a composite case, runs through every exercise so you always have a model of what a specific, honest answer looks like.</p>
+          </div>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:1rem;padding:1.75rem 0;border-bottom:0.5px solid var(--border-subtle);">
+        <div style="display:flex;align-items:flex-start;gap:1.25rem;">
+          <div style="flex-shrink:0;margin-top:4px;width:8px;height:8px;border-radius:50%;border:0.5px solid var(--accent-primary);background:transparent;"></div>
+          <div>
+            <p style="font-family:var(--font-body);font-size:var(--text-base);font-weight:500;color:var(--text-primary);margin-bottom:0.35rem;">Branching guidance that personalises your path</p>
+            <p style="font-family:var(--font-body);font-size:var(--text-base);font-weight:300;line-height:var(--leading-relaxed);color:var(--text-secondary);">After Stage 1, a decision guide tells you exactly where to invest more time based on what your audit reveals.</p>
+          </div>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:1rem;padding:1.75rem 0;border-bottom:0.5px solid var(--border-subtle);">
+        <div style="display:flex;align-items:flex-start;gap:1.25rem;">
+          <div style="flex-shrink:0;margin-top:4px;width:8px;height:8px;border-radius:50%;border:0.5px solid var(--accent-primary);background:transparent;"></div>
+          <div>
+            <p style="font-family:var(--font-body);font-size:var(--text-base);font-weight:500;color:var(--text-primary);margin-bottom:0.35rem;">Stage summary boxes that carry findings forward</p>
+            <p style="font-family:var(--font-body);font-size:var(--text-base);font-weight:300;line-height:var(--leading-relaxed);color:var(--text-secondary);">Nothing gets lost between sections. Each stage ends with a structured summary that feeds directly into the next.</p>
+          </div>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:1rem;padding:1.75rem 0;">
+        <div style="display:flex;align-items:flex-start;gap:1.25rem;">
+          <div style="flex-shrink:0;margin-top:4px;width:8px;height:8px;border-radius:50%;border:0.5px solid var(--accent-primary);background:transparent;"></div>
+          <div>
+            <p style="font-family:var(--font-body);font-size:var(--text-base);font-weight:500;color:var(--text-primary);margin-bottom:0.35rem;">Pre-built Day 45 checkpoint and Day 90 review</p>
+            <p style="font-family:var(--font-body);font-size:var(--text-base);font-weight:300;line-height:var(--leading-relaxed);color:var(--text-secondary);">The plan holds you accountable instead of quietly disappearing into a drawer by week three.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- WHO THIS IS FOR -->
+<section style="background:var(--surface-subtle);padding:var(--section-pad-y) var(--section-pad-x);">
+  <div style="max-width:var(--max-layout);margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:var(--section-gap);">
+
+    <div style="display:flex;flex-direction:column;gap:1.75rem;">
+      <x-import component-from-global-scope="CvetanichinDesignSystem_f4419f.Eyebrow" tone="rose" hint-size="auto,20px">Who this is for</x-import>
+      <h2 style="font-family:var(--font-display);font-size:var(--text-3xl);font-weight:300;line-height:var(--leading-snug);letter-spacing:var(--tracking-tight);color:var(--text-primary);">Purpose-driven professionals<br>who want <em style="font-style:italic;">structure, not platitudes.</em></h2>
+      <p style="font-family:var(--font-body);font-size:var(--text-md);font-weight:300;line-height:var(--leading-loose);color:var(--text-secondary);max-width:var(--max-text-body);">If you're tired of self-help content that makes you feel understood for twenty minutes and changes nothing, this is built for you specifically.</p>
+      <div style="display:flex;flex-direction:column;gap:0.9rem;padding-top:0.5rem;">
+        <p style="font-family:var(--font-body);font-size:var(--text-base);font-weight:300;line-height:var(--leading-relaxed);color:var(--text-secondary);display:flex;align-items:flex-start;gap:0.75rem;"><span style="flex-shrink:0;margin-top:6px;display:inline-block;width:8px;height:8px;border-radius:50%;border:0.5px solid var(--accent-primary);"></span>You've already done some version of a life audit — and nothing changed afterwards.</p>
+        <p style="font-family:var(--font-body);font-size:var(--text-base);font-weight:300;line-height:var(--leading-relaxed);color:var(--text-secondary);display:flex;align-items:flex-start;gap:0.75rem;"><span style="flex-shrink:0;margin-top:6px;display:inline-block;width:8px;height:8px;border-radius:50%;border:0.5px solid var(--accent-primary);"></span>You know something needs to change, but it stays a feeling rather than a decision.</p>
+        <p style="font-family:var(--font-body);font-size:var(--text-base);font-weight:300;line-height:var(--leading-relaxed);color:var(--text-secondary);display:flex;align-items:flex-start;gap:0.75rem;"><span style="flex-shrink:0;margin-top:6px;display:inline-block;width:8px;height:8px;border-radius:50%;border:0.5px solid var(--accent-primary);"></span>You want to be treated as an intelligent adult, not sold a transformation.</p>
+      </div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:1.75rem;">
+      <x-import component-from-global-scope="CvetanichinDesignSystem_f4419f.Eyebrow" tone="rose" hint-size="auto,20px">Who this isn't for</x-import>
+      <h2 style="font-family:var(--font-display);font-size:var(--text-3xl);font-weight:300;line-height:var(--leading-snug);letter-spacing:var(--tracking-tight);color:var(--text-primary);">This is a working document.<br><em style="font-style:italic;">Not a motivational read.</em></h2>
+      <p style="font-family:var(--font-body);font-size:var(--text-md);font-weight:300;line-height:var(--leading-loose);color:var(--text-secondary);max-width:var(--max-text-body);">It takes 60–90 minutes of honest effort to complete Stages 1–3, and the value compounds over your full 90-day cycle — not in the first five minutes.</p>
+      <div style="display:flex;flex-direction:column;gap:0.9rem;padding-top:0.5rem;">
+        <p style="font-family:var(--font-body);font-size:var(--text-base);font-weight:300;line-height:var(--leading-relaxed);color:var(--text-muted);display:flex;align-items:flex-start;gap:0.75rem;"><span style="flex-shrink:0;margin-top:6px;display:inline-block;width:8px;height:8px;border-radius:50%;border:0.5px solid var(--border-emphasis);"></span>If you want a quick mood-lift, this isn't that.</p>
+        <p style="font-family:var(--font-body);font-size:var(--text-base);font-weight:300;line-height:var(--leading-relaxed);color:var(--text-muted);display:flex;align-items:flex-start;gap:0.75rem;"><span style="flex-shrink:0;margin-top:6px;display:inline-block;width:8px;height:8px;border-radius:50%;border:0.5px solid var(--border-emphasis);"></span>If you want someone to do the thinking for you, this isn't that either.</p>
+        <p style="font-family:var(--font-body);font-size:var(--text-base);font-weight:300;line-height:var(--leading-relaxed);color:var(--text-muted);display:flex;align-items:flex-start;gap:0.75rem;"><span style="flex-shrink:0;margin-top:6px;display:inline-block;width:8px;height:8px;border-radius:50%;border:0.5px solid var(--border-emphasis);"></span>If you aren't willing to write the uncomfortable answer, the exercises won't help you.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FAQ -->
+<section style="background:var(--surface-base);padding:var(--section-pad-y) var(--section-pad-x);">
+  <div style="max-width:var(--max-layout);margin:0 auto;display:grid;grid-template-columns:1fr 2fr;gap:var(--section-gap);align-items:start;">
+
+    <div style="position:sticky;top:80px;">
+      <x-import component-from-global-scope="CvetanichinDesignSystem_f4419f.Eyebrow" tone="rose" hint-size="auto,20px">Before you buy</x-import>
+      <h2 style="font-family:var(--font-display);font-size:var(--text-3xl);font-weight:300;line-height:var(--leading-snug);letter-spacing:var(--tracking-tight);color:var(--text-primary);margin-top:1.25rem;">Common<br><em style="font-style:italic;">questions.</em></h2>
+    </div>
+
+    <div style="display:flex;flex-direction:column;">
+      <div class="faq-item" style="padding:2rem 0;">
+        <p style="font-family:var(--font-body);font-size:var(--text-md);font-weight:500;color:var(--text-primary);margin-bottom:0.75rem;">How is this different from a regular self-help workbook?</p>
+        <p style="font-family:var(--font-body);font-size:var(--text-base);font-weight:300;line-height:var(--leading-loose);color:var(--text-secondary);">Most workbooks end at reflection. This one is built specifically to convert reflection into a checkable, time-bound plan — the same way professional project design moves from a Theory of Change to a monitored logframe. Stage 4 is the entire reason this product exists.</p>
+      </div>
+      <div class="faq-item" style="padding:2rem 0;">
+        <p style="font-family:var(--font-body);font-size:var(--text-md);font-weight:500;color:var(--text-primary);margin-bottom:0.75rem;">How long does it take to complete?</p>
+        <p style="font-family:var(--font-body);font-size:var(--text-base);font-weight:300;line-height:var(--leading-loose);color:var(--text-secondary);">Stages 1–3 typically take 60–90 minutes in one sitting. Stage 4 is best done after letting your diagnosis settle for a day or two. The full 90-day cycle is meant to be lived, not rushed.</p>
+      </div>
+      <div class="faq-item" style="padding:2rem 0;">
+        <p style="font-family:var(--font-body);font-size:var(--text-md);font-weight:500;color:var(--text-primary);margin-bottom:0.75rem;">What if I don't have a clear "problem" — I just feel vaguely stuck?</p>
+        <p style="font-family:var(--font-body);font-size:var(--text-base);font-weight:300;line-height:var(--leading-loose);color:var(--text-secondary);">That's exactly what Stage 1 is built for. Most people start with a diffuse feeling and leave with a specific, scored baseline. A genuine audit almost always surfaces at least one domain that's clearly lower than the rest.</p>
+      </div>
+      <div class="faq-item" style="padding:2rem 0;">
+        <p style="font-family:var(--font-body);font-size:var(--text-md);font-weight:500;color:var(--text-primary);margin-bottom:0.75rem;">Do I need to complete it in order?</p>
+        <p style="font-family:var(--font-body);font-size:var(--text-base);font-weight:300;line-height:var(--leading-loose);color:var(--text-secondary);">Yes — each stage builds on the last. Stage 4 specifically requires what you carried forward from Stages 1–3. The system is sequential by design.</p>
+      </div>
+      <div class="faq-item" style="padding:2rem 0;border-bottom:none;">
+        <p style="font-family:var(--font-body);font-size:var(--text-md);font-weight:500;color:var(--text-primary);margin-bottom:0.75rem;">What format is it in?</p>
+        <p style="font-family:var(--font-body);font-size:var(--text-base);font-weight:300;line-height:var(--leading-loose);color:var(--text-secondary);">Digital download (.docx). Fill it in on your computer via Microsoft Word or Google Docs, or print it if you prefer working by hand. Delivered instantly after purchase.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CREATOR -->
+<section style="background:var(--surface-subtle);padding:var(--section-pad-y) var(--section-pad-x);">
+  <div style="max-width:var(--max-layout);margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:var(--section-gap);align-items:center;">
+
+    <div style="position:relative;">
+      <div style="width:100%;max-width:420px;aspect-ratio:4/5;border:0.5px solid var(--border-emphasis);overflow:hidden;position:relative;background:var(--surface-muted);">
+        <img src="uploads/ai-persona.png" alt="Vaska Cvetanoska" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;">
+      </div>
+      <div style="position:absolute;top:12px;left:12px;right:-12px;bottom:-12px;border:0.5px solid var(--border-strong);pointer-events:none;"></div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:1.75rem;">
+      <x-import component-from-global-scope="CvetanichinDesignSystem_f4419f.Eyebrow" tone="rose" hint-size="auto,20px">The creator</x-import>
+      <h2 style="font-family:var(--font-display);font-size:var(--text-3xl);font-weight:300;line-height:var(--leading-snug);color:var(--text-primary);">Vaska Cvetanoska</h2>
+      <p style="font-family:var(--font-body);font-size:var(--text-md);font-weight:300;line-height:var(--leading-loose);color:var(--text-secondary);max-width:var(--max-text-body);">My background is in EU-funded project design — Theory of Change, logframes, results-based monitoring. That discipline exists because "we understand the problem" is not useful on its own. You need a plan with indicators you can actually check.</p>
+      <p style="font-family:var(--font-body);font-size:var(--text-md);font-weight:300;line-height:var(--leading-loose);color:var(--text-secondary);max-width:var(--max-text-body);">I kept noticing that almost no self-improvement content applies that same rigor to an individual's actual life. This workbook does. Stage 4 is the part I'm most proud of — and the part almost every other product skips entirely.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- CTA BLOCK -->
+<section id="cta" style="background:var(--surface-muted);padding:var(--section-pad-y) var(--section-pad-x);border-top:0.5px solid var(--border-subtle);">
+  <div style="max-width:var(--max-layout);margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:var(--section-gap);align-items:center;">
+
+    <div style="display:flex;flex-direction:column;gap:1.5rem;">
+      <h2 style="font-family:var(--font-display);font-size:clamp(32px,4vw,52px);font-weight:300;line-height:1.05;letter-spacing:var(--tracking-tight);color:var(--text-primary);">Stop circling the same reflection.<br><em style="font-style:italic;color:var(--text-accent);">Build the plan.</em></h2>
+      <p style="font-family:var(--font-body);font-size:var(--text-md);font-weight:300;line-height:var(--leading-loose);color:var(--text-secondary);max-width:420px;">Understanding and action are different skills. This is the method that teaches the bridge between them — and the plan you build is only as good as the honesty you bring to it.</p>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:1.5rem;">
+      <div style="padding-bottom:1.5rem;border-bottom:0.5px solid var(--border-emphasis);">
+        <p style="font-family:var(--font-display);font-size:52px;font-weight:300;line-height:1;color:var(--text-primary);">€79</p>
+        <p style="font-family:var(--font-body);font-size:var(--text-xs);font-weight:300;letter-spacing:0.15em;text-transform:uppercase;color:var(--text-muted);margin-top:6px;">One payment. No subscription. No upsell.</p>
+      </div>
+      <x-import component-from-global-scope="CvetanichinDesignSystem_f4419f.Button" variant="primary" size="lg" arrow="true" hint-size="100%,56px">Get the workbook — €79</x-import>
+      <div style="display:flex;flex-direction:column;gap:0.6rem;">
+        <p style="font-family:var(--font-body);font-size:var(--text-xs);font-weight:300;letter-spacing:0.06em;color:var(--text-muted);display:flex;align-items:center;gap:8px;"><span style="display:inline-block;flex-shrink:0;width:6px;height:6px;border-radius:50%;border:0.5px solid var(--border-accent);"></span>Digital download (.docx). Delivered instantly.</p>
+        <p style="font-family:var(--font-body);font-size:var(--text-xs);font-weight:300;letter-spacing:0.06em;color:var(--text-muted);display:flex;align-items:center;gap:8px;"><span style="display:inline-block;flex-shrink:0;width:6px;height:6px;border-radius:50%;border:0.5px solid var(--border-accent);"></span>Fillable on desktop or via Google Docs.</p>
+        <p style="font-family:var(--font-body);font-size:var(--text-xs);font-weight:300;letter-spacing:0.06em;color:var(--text-muted);display:flex;align-items:center;gap:8px;"><span style="display:inline-block;flex-shrink:0;width:6px;height:6px;border-radius:50%;border:0.5px solid var(--border-accent);"></span>Stages 1–3 completable in one sitting of 60–90 minutes.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer style="background:var(--surface-inverse);padding:3rem var(--section-pad-x);">
+  <div style="max-width:var(--max-layout);margin:0 auto;display:flex;align-items:center;justify-content:space-between;">
+    <span style="font-family:var(--font-display);font-size:15px;font-weight:300;letter-spacing:0.08em;color:var(--surface-white);opacity:0.65;">CVETANICHIN</span>
+    <span style="font-family:var(--font-body);font-size:var(--text-xs);font-weight:300;letter-spacing:0.15em;color:var(--surface-white);opacity:0.35;">© 2026 Cvetanichin. All rights reserved.</span>
+  </div>
+</footer>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1440,&quot;height&quot;:900},&quot;accentPresence&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;expressive&quot;,&quot;options&quot;:[&quot;expressive&quot;,&quot;restrained&quot;,&quot;editorial&quot;],&quot;tsType&quot;:&quot;\&quot;expressive\&quot; | \&quot;restrained\&quot; | \&quot;editorial\&quot;&quot;},&quot;headlineStyle&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;soft-italic&quot;,&quot;options&quot;:[&quot;soft-italic&quot;,&quot;upright&quot;,&quot;direct&quot;],&quot;tsType&quot;:&quot;\&quot;soft-italic\&quot; | \&quot;upright\&quot; | \&quot;direct\&quot;&quot;},&quot;surfaceMood&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;warm&quot;,&quot;options&quot;:[&quot;warm&quot;,&quot;minimal&quot;,&quot;night&quot;],&quot;tsType&quot;:&quot;\&quot;warm\&quot; | \&quot;minimal\&quot; | \&quot;night\&quot;&quot;}}">
+
+class Component extends DCLogic {
+
+  buildCss() {
+    const presence = this.props.accentPresence ?? 'expressive';
+    const headline  = this.props.headlineStyle  ?? 'soft-italic';
+    const surface   = this.props.surfaceMood    ?? 'minimal';
+    let css = '';
+
+    if (presence === 'restrained') {
+      css += `
+        :root {
+          --surface-accent:  #EDE5E6;
+          --accent-primary:  #685762;
+          --accent-light:    #9B8A95;
+          --accent-deep:     #4A3B46;
+          --accent-pale:     #F0EBEC;
+          --text-accent:     #685762;
+          --border-subtle:   rgba(104,87,98,0.12);
+          --border-emphasis: rgba(104,87,98,0.18);
+          --border-strong:   rgba(104,87,98,0.28);
+          --border-accent:   rgba(104,87,98,0.45);
+        }
+        .cv-quote--accent { background: #685762 !important; }
+      `;
+    } else if (presence === 'editorial') {
+      css += `
+        :root {
+          --surface-accent:  #190828;
+          --accent-primary:  #9B9987;
+          --accent-light:    #C8C6B8;
+          --accent-deep:     #685762;
+          --accent-pale:     #F5F0F1;
+          --text-accent:     #685762;
+          --border-subtle:   rgba(155,153,135,0.12);
+          --border-emphasis: rgba(155,153,135,0.18);
+          --border-strong:   rgba(155,153,135,0.28);
+          --border-accent:   rgba(155,153,135,0.45);
+        }
+        .cv-quote--accent { background: #190828 !important; }
+      `;
+    }
+
+    if (headline === 'upright') {
+      css += `h1 em, h2 em, h3 em { font-style: normal !important; }`;
+    } else if (headline === 'direct') {
+      css += `
+        h1, h2, h3 {
+          font-family: 'Outfit', system-ui, sans-serif !important;
+          font-weight: 500 !important;
+          letter-spacing: -0.01em !important;
+        }
+        h1 em, h2 em, h3 em { font-style: normal !important; font-weight: 600 !important; }
+      `;
+    }
+
+    if (surface === 'warm') {
+      css += `
+        :root {
+          --surface-base:    #F5F0EB;
+          --surface-subtle:  #EDE7E0;
+          --surface-muted:   #E5DDD5;
+          --surface-inverse: #2D2D2D;
+          --surface-white:   #FAF7F4;
+        }
+      `;
+    } else if (surface === 'minimal') {
+      css += `
+        :root {
+          --surface-base:    #EDEAE5;
+          --surface-subtle:  #E2DED9;
+          --surface-muted:   #D5D0CA;
+          --surface-inverse: #393E41;
+          --surface-white:   #F6F4F1;
+        }
+      `;
+    } else if (surface === 'night') {
+      css += `
+        :root {
+          --surface-base:    #190828;
+          --surface-subtle:  #2E1A3A;
+          --surface-muted:   #3D2550;
+          --surface-inverse: #0D0416;
+          --surface-white:   #2E1A3A;
+          --text-primary:    #FDF8F9;
+          --text-secondary:  rgba(253,248,249,0.65);
+          --text-muted:      rgba(253,248,249,0.38);
+        }
+      `;
+    }
+
+    return css;
+  }
+
+  renderVals() {
+    const css = this.buildCss();
+    return {
+      tweakStyle: React.createElement('style', { key: 'tw', dangerouslySetInnerHTML: { __html: css } })
+    };
+  }
+}
+
+</script>
+</body>
+</html>

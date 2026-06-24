@@ -1,0 +1,154 @@
+/* =============================================================
+   Cvetanichin — Design Tokens
+   All --cvet-* custom properties. No hardcoded values elsewhere.
+   Domain switching: body.domain-consultancy overrides :root.
+   ============================================================= */
+
+@font-face {
+  font-family: 'Fraunces';
+  font-style: italic;
+  font-weight: 200;
+  font-display: swap;
+  src: url('../fonts/fraunces-italic-200.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Fraunces';
+  font-style: italic;
+  font-weight: 300;
+  font-display: swap;
+  src: url('../fonts/fraunces-italic-300.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Outfit';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url('../fonts/outfit-300.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Outfit';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/outfit-400.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Outfit';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('../fonts/outfit-500.woff2') format('woff2');
+}
+
+:root {
+  /* Fonts */
+  --cvet-font-serif:  'Fraunces', Georgia, 'Times New Roman', serif;
+  --cvet-font-sans:   'Outfit', system-ui, -apple-system, sans-serif;
+
+  /* Type scale */
+  --cvet-text-xs:      10px;
+  --cvet-text-sm:      11px;
+  --cvet-text-base:    13px;
+  --cvet-text-md:      14px;
+  --cvet-text-lg:      15px;
+  --cvet-text-xl:      21px;
+  --cvet-text-2xl:     28px;
+  --cvet-text-3xl:     32px;
+  --cvet-text-4xl:     38px;
+  --cvet-text-5xl:     48px;
+  --cvet-text-display: clamp(48px, 5.5vw, 72px);
+
+  /* Line heights */
+  --cvet-leading-tight:   1.0;
+  --cvet-leading-snug:    1.15;
+  --cvet-leading-normal:  1.55;
+  --cvet-leading-relaxed: 1.75;
+  --cvet-leading-loose:   1.9;
+
+  /* Letter spacing */
+  --cvet-tracking-tight:   -0.02em;
+  --cvet-tracking-normal:   0em;
+  --cvet-tracking-wide:     0.06em;
+  --cvet-tracking-wider:    0.10em;
+  --cvet-tracking-widest:   0.25em;
+
+  /* Spacing (4px grid) */
+  --cvet-space-1:  4px;  --cvet-space-2:  8px;  --cvet-space-3:  12px;
+  --cvet-space-4:  16px; --cvet-space-5:  20px; --cvet-space-6:  24px;
+  --cvet-space-8:  32px; --cvet-space-10: 40px; --cvet-space-12: 48px;
+  --cvet-space-16: 64px; --cvet-space-20: 80px; --cvet-space-24: 96px;
+
+  /* Section rhythm */
+  --cvet-section-x:  clamp(24px, 5vw, 80px);
+  --cvet-section-y:  clamp(60px, 8vw, 120px);
+  --cvet-layout-max: 1280px;
+  --cvet-prose-max:  680px;
+
+  /* Radius — editorial: almost none */
+  --cvet-radius-none: 0px;
+  --cvet-radius-sm:   2px;
+  --cvet-radius-full: 9999px;
+
+  /* Borders */
+  --cvet-border-hair: 0.5px;
+  --cvet-border-thin: 1px;
+
+  /* Shadows — always warm, never heavy */
+  --cvet-shadow-sm:   0 1px 8px  rgba(45,45,45,0.05);
+  --cvet-shadow-md:   0 1px 24px rgba(45,45,45,0.07);
+  --cvet-shadow-warm: 0 4px 24px rgba(160,85,85,0.08);
+
+  /* Transitions */
+  --cvet-transition:        all 0.25s ease;
+  --cvet-transition-reveal: opacity 0.7s ease, transform 0.7s ease;
+
+  /* ── Semantic colour tokens — Default: Self-Improvement (D2) ── */
+  --cvet-surface-base:     #F5F0F1;
+  --cvet-surface-subtle:   #F8E0E2;
+  --cvet-surface-muted:    #EDE5E6;
+  --cvet-surface-inverse:  #190828;
+  --cvet-surface-white:    #FDF8F9;
+  --cvet-surface-accent:   #E55381;
+
+  --cvet-text-primary:     #190828;
+  --cvet-text-secondary:   #685762;
+  --cvet-text-muted:       #9B9987;
+  --cvet-text-inverse:     #FDF8F9;
+  --cvet-text-accent:      #C23368;
+
+  --cvet-accent-primary:   #E55381;
+  --cvet-accent-light:     #EFA9AE;
+  --cvet-accent-deep:      #C23368;
+  --cvet-accent-pale:      #FCE8EE;
+
+  --cvet-border-subtle:    rgba(229,83,129,0.13);
+  --cvet-border-emphasis:  rgba(229,83,129,0.20);
+  --cvet-border-strong:    rgba(229,83,129,0.32);
+  --cvet-border-inverse:   rgba(253,248,249,0.07);
+}
+
+/* ── Domain 1 — Consultancy overrides ─────────────────────── */
+body.domain-consultancy {
+  --cvet-surface-base:     #EDEAE5;
+  --cvet-surface-subtle:   #D3D0CB;
+  --cvet-surface-muted:    #C4C0BA;
+  --cvet-surface-inverse:  #393E41;
+  --cvet-surface-white:    #FAF9F6;
+  --cvet-surface-accent:   #E2C044;
+
+  --cvet-text-primary:     #1E2019;
+  --cvet-text-secondary:   #393E41;
+  --cvet-text-muted:       #8A9298;
+  --cvet-text-inverse:     #FAF9F6;
+  --cvet-text-accent:      #B89928;
+
+  --cvet-accent-primary:   #E2C044;
+  --cvet-accent-light:     #EDDA85;
+  --cvet-accent-deep:      #B89928;
+  --cvet-accent-pale:      #F8F3DC;
+
+  --cvet-border-subtle:    rgba(226,192,68,0.15);
+  --cvet-border-emphasis:  rgba(226,192,68,0.22);
+  --cvet-border-strong:    rgba(226,192,68,0.35);
+  --cvet-border-inverse:   rgba(250,249,246,0.07);
+}

@@ -1,0 +1,18 @@
+/* =============================================================
+   Cvetanichin — Consultancy Theme (Domain 1)
+   Applied via body.domain-consultancy (already in tokens.css).
+   This file adds any structural D1-specific overrides.
+   ============================================================= */
+
+/* Teal secondary accent — used sparingly for eyebrows and dividers */
+body.domain-consultancy .eyebrow,
+body.domain-consultancy .footer-nav__title {
+  color: var(--cvet-accent-primary); /* gold */
+}
+
+body.domain-consultancy .hero--split .hero__accent-col {
+  background: var(--cvet-surface-inverse);
+}
+
+/* D1: post/archive uses neutral — no domain accent on blog */
+body.domain-consultancy .post-card__meta { color: var(--cvet-text-muted); }

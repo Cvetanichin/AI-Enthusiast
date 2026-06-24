@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The First Offer Kit — Cvetanichin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,200;0,9..144,300;0,9..144,400;1,9..144,200;1,9..144,300&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --rose:#C87070;--rose-light:#E8B8B8;--rose-deep:#A05555;--rose-pale:#F7EDED;
+  --ivory:#F5F0EB;--ivory-dark:#EDE6DC;--ivory-mid:#E8E0D4;
+  --charcoal:#2D2D2D;--charcoal-mid:#5A5A5A;--charcoal-light:#9A9A9A;
+  --white:#FDFAF7;--offwhite:#FAF7F3;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Outfit',sans-serif;background:var(--ivory);color:var(--charcoal);overflow-x:hidden;}
+
+/* SCROLL REVEAL */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease;}
+.reveal.visible{opacity:1;transform:none;}
+.reveal-left{opacity:0;transform:translateX(-32px);transition:opacity .8s ease,transform .8s ease;}
+.reveal-left.visible{opacity:1;transform:none;}
+.reveal-right{opacity:0;transform:translateX(32px);transition:opacity .8s ease,transform .8s ease;}
+.reveal-right.visible{opacity:1;transform:none;}
+.delay-1{transition-delay:.1s;}
+.delay-2{transition-delay:.2s;}
+.delay-3{transition-delay:.3s;}
+.delay-4{transition-delay:.4s;}
+
+/* PROGRESS BAR */
+#progress-bar{position:fixed;top:0;left:0;height:2px;background:var(--rose);width:0%;z-index:1000;transition:width .1s linear;}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:1rem 2.5rem;background:rgba(245,240,235,0.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:0.5px solid rgba(200,112,112,0.15);transition:box-shadow .3s;}
+nav.scrolled{box-shadow:0 1px 24px rgba(45,45,45,0.07);}
+.nav-brand{font-family:'Fraunces',serif;font-size:13px;font-weight:300;letter-spacing:0.22em;text-transform:uppercase;color:var(--charcoal-mid);}
+.nav-cta{font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--rose-deep);border:0.5px solid rgba(200,112,112,0.5);padding:7px 20px;cursor:pointer;background:transparent;transition:all .25s;border-radius:0;}
+.nav-cta:hover{background:var(--rose);color:var(--white);border-color:var(--rose);}
+
+/* HERO */
+.hero{display:grid;grid-template-columns:1.1fr 1fr;min-height:88vh;position:relative;}
+.hero-left{background:var(--rose);padding:5rem 3.5rem 4rem;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;}
+.hero-left::after{content:'';position:absolute;bottom:-120px;right:-80px;width:320px;height:320px;border-radius:50%;background:rgba(253,250,247,0.06);pointer-events:none;}
+.hero-left::before{content:'';position:absolute;top:3rem;right:3rem;width:60px;height:0.5px;background:rgba(253,250,247,0.35);}
+.hero-eyebrow{font-size:10px;font-weight:500;letter-spacing:0.25em;text-transform:uppercase;color:rgba(253,250,247,0.55);}
+.hero-title{font-family:'Fraunces',serif;font-size:clamp(48px,5.5vw,72px);font-weight:200;line-height:1.0;color:var(--white);letter-spacing:-0.02em;margin-top:auto;padding-top:2rem;}
+.hero-title em{font-style:italic;font-weight:200;}
+.hero-title-sub{font-family:'Fraunces',serif;font-size:14px;font-weight:300;color:rgba(253,250,247,0.6);margin-top:1.5rem;line-height:1.6;max-width:280px;}
+.hero-right{background:var(--ivory-dark);padding:5rem 3.5rem 4rem;display:flex;flex-direction:column;justify-content:center;gap:2rem;}
+.hero-tagline{font-family:'Fraunces',serif;font-size:21px;font-weight:300;line-height:1.55;color:var(--charcoal);max-width:300px;}
+.hero-body{font-size:14px;font-weight:300;line-height:1.9;color:var(--charcoal-mid);max-width:300px;}
+.hero-price-row{display:flex;align-items:baseline;gap:10px;}
+.hero-price{font-family:'Fraunces',serif;font-size:38px;font-weight:300;color:var(--charcoal);}
+.hero-price-note{font-size:12px;color:var(--charcoal-light);font-weight:300;line-height:1.4;}
+.btn-primary{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-size:12px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;background:var(--charcoal);color:var(--white);padding:15px 32px;cursor:pointer;border:none;transition:all .25s;text-decoration:none;position:relative;overflow:hidden;}
+.btn-primary::after{content:'';position:absolute;inset:0;background:var(--rose-deep);transform:translateX(-101%);transition:transform .3s ease;}
+.btn-primary:hover::after{transform:translateX(0);}
+.btn-primary span{position:relative;z-index:1;}
+.btn-primary .arrow{position:relative;z-index:1;transition:transform .25s;}
+.btn-primary:hover .arrow{transform:translateX(4px);}
+
+/* DIVIDER */
+.divider{width:100%;height:1px;background:linear-gradient(90deg,transparent 0%,rgba(200,112,112,0.25) 20%,rgba(200,112,112,0.25) 80%,transparent 100%);}
+
+/* STATS STRIP */
+.stats-strip{background:var(--charcoal);display:grid;grid-template-columns:repeat(4,1fr);padding:0;}
+.stat-item{padding:1.75rem 2rem;border-right:0.5px solid rgba(253,250,247,0.06);display:flex;flex-direction:column;gap:4px;}
+.stat-item:last-child{border-right:none;}
+.stat-num{font-family:'Fraunces',serif;font-size:28px;font-weight:300;color:var(--rose-light);}
+.stat-label{font-size:11px;font-weight:300;color:rgba(253,250,247,0.45);letter-spacing:0.08em;}
+
+/* FOR WHOM */
+.section-for{padding:5rem 3.5rem;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;background:var(--ivory);}
+.section-label{font-size:10px;letter-spacing:0.25em;text-transform:uppercase;color:var(--rose);margin-bottom:1.25rem;font-weight:500;}
+.section-heading{font-family:'Fraunces',serif;font-size:clamp(24px,2.5vw,32px);font-weight:300;line-height:1.25;color:var(--charcoal);}
+.for-body{display:flex;flex-direction:column;gap:1.25rem;padding-top:0.5rem;}
+.for-para{font-size:14px;font-weight:300;line-height:1.9;color:var(--charcoal-mid);}
+.for-highlight{font-size:14px;font-weight:400;color:var(--charcoal);font-family:'Fraunces',serif;font-style:italic;border-left:2px solid var(--rose);padding-left:1rem;line-height:1.6;}
+
+/* WHAT YOU GET */
+.section-what{background:var(--charcoal);padding:5rem 3.5rem;}
+.what-header{margin-bottom:3rem;}
+.what-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,0.05);}
+.what-item{background:var(--charcoal);padding:2rem 1.75rem;border:0.5px solid rgba(255,255,255,0.04);transition:background .3s;}
+.what-item:hover{background:#363636;}
+.what-num{font-family:'Fraunces',serif;font-size:36px;font-weight:200;color:rgba(232,184,184,0.4);margin-bottom:1rem;line-height:1;}
+.what-title{font-size:13px;font-weight:500;letter-spacing:0.06em;color:var(--white);margin-bottom:.6rem;text-transform:uppercase;}
+.what-desc{font-size:13px;font-weight:300;color:rgba(253,250,247,0.5);line-height:1.75;}
+
+/* STEPS */
+.section-steps{padding:5rem 3.5rem;background:var(--offwhite);}
+.steps-list{border-top:0.5px solid rgba(200,112,112,0.15);margin-top:2.5rem;}
+.step{display:grid;grid-template-columns:100px 1fr auto;gap:2rem;padding:1.75rem 0;border-bottom:0.5px solid rgba(200,112,112,0.12);align-items:start;transition:background .2s;cursor:default;}
+.step:hover .step-dot{background:var(--rose);}
+.step-num{font-family:'Fraunces',serif;font-size:12px;font-weight:300;color:var(--rose);padding-top:3px;letter-spacing:0.05em;}
+.step-body{}
+.step-title{font-size:15px;font-weight:500;color:var(--charcoal);margin-bottom:.4rem;}
+.step-desc{font-size:13px;font-weight:300;color:var(--charcoal-mid);line-height:1.75;max-width:480px;}
+.step-dot{width:8px;height:8px;border-radius:50%;background:transparent;border:1px solid rgba(200,112,112,0.3);margin-top:6px;flex-shrink:0;transition:background .2s;}
+
+/* QUOTE */
+.section-quote{background:var(--rose);padding:5rem 3.5rem;position:relative;overflow:hidden;}
+.section-quote::before{content:'"';font-family:'Fraunces',serif;font-size:200px;font-weight:200;color:rgba(253,250,247,0.1);line-height:0.75;position:absolute;top:1.5rem;left:2rem;pointer-events:none;}
+.quote-text{font-family:'Fraunces',serif;font-size:clamp(18px,2vw,24px);font-weight:300;font-style:italic;line-height:1.65;color:var(--white);max-width:600px;position:relative;z-index:1;}
+.quote-attr{margin-top:2rem;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(253,250,247,0.5);font-weight:400;}
+
+/* CREATOR */
+.section-creator{padding:5rem 3.5rem;background:var(--ivory-dark);display:grid;grid-template-columns:280px 1fr;gap:4.5rem;align-items:center;}
+.creator-img-wrap{position:relative;}
+.creator-img{width:100%;display:block;object-fit:cover;object-position:top center;filter:sepia(5%) contrast(1.02);transition:filter .4s;}
+.creator-img:hover{filter:sepia(0%) contrast(1.05);}
+.creator-frame{position:absolute;top:12px;left:12px;right:-12px;bottom:-12px;border:0.5px solid rgba(200,112,112,0.3);pointer-events:none;z-index:0;}
+.creator-img-wrap{z-index:1;}
+.creator-content{display:flex;flex-direction:column;gap:1.25rem;}
+.creator-name{font-family:'Fraunces',serif;font-size:clamp(28px,3vw,38px);font-weight:200;line-height:1.1;color:var(--charcoal);}
+.creator-name em{font-style:italic;color:var(--rose-deep);}
+.creator-bio{display:flex;flex-direction:column;gap:.75rem;}
+.creator-bio p{font-size:14px;font-weight:300;line-height:1.9;color:var(--charcoal-mid);max-width:400px;}
+.creator-rule{height:0.5px;background:rgba(200,112,112,0.2);margin:0.5rem 0;}
+.creator-tagline{font-size:11px;font-weight:400;letter-spacing:0.15em;text-transform:uppercase;color:var(--rose-deep);}
+
+/* FORMATS */
+.section-formats{padding:5rem 3.5rem;background:var(--ivory);}
+.formats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:2.5rem;}
+.format-card{background:var(--white);padding:1.75rem 1.5rem;border:0.5px solid rgba(200,112,112,0.15);transition:all .25s;cursor:default;}
+.format-card:hover{border-color:var(--rose);transform:translateY(-3px);}
+.format-dot{width:32px;height:32px;background:var(--rose);margin-bottom:1rem;display:flex;align-items:center;justify-content:center;transition:background .25s;}
+.format-card:hover .format-dot{background:var(--rose-deep);}
+.format-dot-inner{width:10px;height:10px;background:var(--white);}
+.format-name{font-size:12px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--charcoal);margin-bottom:.5rem;}
+.format-desc{font-size:12px;font-weight:300;color:var(--charcoal-mid);line-height:1.75;}
+
+/* CTA BLOCK */
+.section-cta{padding:5rem 3.5rem;background:var(--ivory-dark);display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;border-top:0.5px solid rgba(200,112,112,0.15);}
+.cta-heading{font-family:'Fraunces',serif;font-size:clamp(28px,3.5vw,44px);font-weight:200;line-height:1.15;color:var(--charcoal);}
+.cta-heading em{font-style:italic;color:var(--rose-deep);}
+.cta-right{display:flex;flex-direction:column;gap:1.25rem;}
+.cta-price-row{display:flex;align-items:baseline;gap:12px;padding-bottom:1.25rem;border-bottom:0.5px solid rgba(200,112,112,0.2);}
+.cta-price{font-family:'Fraunces',serif;font-size:48px;font-weight:300;color:var(--charcoal);}
+.cta-price-detail{font-size:12px;color:var(--charcoal-light);line-height:1.6;font-weight:300;}
+.cta-reassurance{display:flex;flex-direction:column;gap:.6rem;margin-top:.25rem;}
+.cta-line{font-size:12px;font-weight:300;color:var(--charcoal-light);display:flex;align-items:center;gap:8px;}
+.cta-line::before{content:'';display:inline-block;width:6px;height:6px;border:0.5px solid rgba(200,112,112,0.5);border-radius:50%;flex-shrink:0;}
+
+/* FOOTER */
+footer{background:var(--charcoal);padding:2rem 2.5rem;display:flex;justify-content:space-between;align-items:center;}
+.footer-brand{font-family:'Fraunces',serif;font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(253,250,247,0.4);font-weight:300;}
+.footer-copy{font-size:11px;color:rgba(253,250,247,0.25);font-weight:300;}
+
+/* BACK TO TOP */
+#back-top{position:fixed;bottom:2rem;right:2rem;width:40px;height:40px;background:var(--charcoal);display:flex;align-items:center;justify-content:center;cursor:pointer;opacity:0;transform:translateY(8px);transition:opacity .3s,transform .3s;border:0.5px solid rgba(253,250,247,0.1);z-index:200;}
+#back-top.show{opacity:1;transform:translateY(0);}
+#back-top:hover{background:var(--rose-deep);}
+#back-top svg{width:16px;height:16px;stroke:var(--white);fill:none;stroke-width:1.5;}
+</style>
+</head>
+<body>
+
+<div id="progress-bar"></div>
+
+<nav id="nav">
+  <span class="nav-brand">Cvetanichin</span>
+  <button class="nav-cta" onclick="document.getElementById('cta').scrollIntoView({behavior:'smooth'})">Get instant access</button>
+</nav>
+
+<section class="hero">
+  <div class="hero-left reveal-left">
+    <div class="hero-eyebrow">A Cvetanichin Digital Product</div>
+    <div>
+      <h1 class="hero-title">The First<br><em>Offer Kit</em></h1>
+      <p class="hero-title-sub">Build and sell your first digital product this month — using AI to do the heavy lifting.</p>
+    </div>
+  </div>
+  <div class="hero-right reveal-right">
+    <p class="hero-tagline">You already have everything you need. What you are missing is a clear, simple path.</p>
+    <p class="hero-body">No course. No audience required. No complicated setup. One calm, practical kit — four sections, five ready-to-use tools, fourteen days.</p>
+    <div class="hero-price-row">
+      <span class="hero-price">€37</span>
+      <span class="hero-price-note">One-time payment<br>Instant PDF delivery</span>
+    </div>
+    <button class="btn-primary" onclick="document.getElementById('cta').scrollIntoView({behavior:'smooth'})">
+      <span>Get instant access</span>
+      <span class="arrow">→</span>
+    </button>
+  </div>
+</section>
+
+<div class="stats-strip">
+  <div class="stat-item reveal delay-1"><span class="stat-num">4</span><span class="stat-label">Sections</span></div>
+  <div class="stat-item reveal delay-2"><span class="stat-num">14</span><span class="stat-label">Days to launch</span></div>
+  <div class="stat-item reveal delay-3"><span class="stat-num">5</span><span class="stat-label">Ready-to-use tools</span></div>
+  <div class="stat-item reveal delay-4"><span class="stat-num">€37</span><span class="stat-label">One-time</span></div>
+</div>
+
+<div class="divider"></div>
+
+<section class="section-for">
+  <div class="reveal-left">
+    <div class="section-label">Who this is for</div>
+    <h2 class="section-heading">For women rebuilding<br>on their own terms</h2>
+  </div>
+  <div class="for-body reveal-right">
+    <p class="for-para">You paused your career — for a child, for a parent, after burnout, after a move — and you are now rebuilding. You have real skills and knowledge. You have never packaged or sold anything online.</p>
+    <p class="for-highlight">You are skeptical of promises and cautious with money. This kit was built for exactly that person.</p>
+    <p class="for-para">You do not need more preparation. You need a clear path. This kit is designed for one type of person and works because it is not trying to serve everyone.</p>
+  </div>
+</section>
+
+<section class="section-what">
+  <div class="what-header">
+    <div class="section-label" style="color:var(--rose-light);" class="reveal">What you will have</div>
+    <h2 class="section-heading reveal" style="color:var(--white);max-width:400px;margin-top:1rem;">Four outputs. Two weeks. One product live.</h2>
+  </div>
+  <div class="what-grid">
+    <div class="what-item reveal delay-1"><div class="what-num">01</div><div class="what-title">A defined offer</div><div class="what-desc">What you are selling, who it is for, and exactly what result they get — in one clear sentence.</div></div>
+    <div class="what-item reveal delay-2"><div class="what-num">02</div><div class="what-title">A digital product</div><div class="what-desc">Built with AI in 3–5 focused sessions. A PDF guide, template pack, or mini toolkit.</div></div>
+    <div class="what-item reveal delay-3"><div class="what-num">03</div><div class="what-title">A sales page live</div><div class="what-desc">Written, designed, and published on Gumroad or Payhip in under one hour.</div></div>
+    <div class="what-item reveal delay-4"><div class="what-num">04</div><div class="what-title">Your first-sale plan</div><div class="what-desc">Five personal messages that outperform any public launch post. Every time.</div></div>
+  </div>
+</section>
+
+<section class="section-steps">
+  <div class="section-label reveal">How it works</div>
+  <h2 class="section-heading reveal delay-1">One section per day.<br>Fourteen days. Done.</h2>
+  <div class="steps-list">
+    <div class="step reveal">
+      <div class="step-num">Section 1</div>
+      <div class="step-body">
+        <div class="step-title">Identify what you already have</div>
+        <div class="step-desc">A 10-minute audit surfaces sellable knowledge from lived transformation, professional expertise, or curation skill. You end with one offer sentence.</div>
+      </div>
+      <div class="step-dot"></div>
+    </div>
+    <div class="step reveal delay-1">
+      <div class="step-num">Section 2</div>
+      <div class="step-body">
+        <div class="step-title">Scope your first digital product</div>
+        <div class="step-desc">Apply the one-result rule. Choose a format. Price it honestly at €37–€57. Write three buyer outcomes that become your sales page.</div>
+      </div>
+      <div class="step-dot"></div>
+    </div>
+    <div class="step reveal delay-2">
+      <div class="step-num">Section 3</div>
+      <div class="step-body">
+        <div class="step-title">Build it with AI in five steps</div>
+        <div class="step-desc">Outline → draft → refine → title → sales page. Claude does the heavy drafting. You edit until it sounds like a real person wrote it.</div>
+      </div>
+      <div class="step-dot"></div>
+    </div>
+    <div class="step reveal delay-3">
+      <div class="step-num">Section 4</div>
+      <div class="step-body">
+        <div class="step-title">Sell it simply, without a website</div>
+        <div class="step-desc">List on Gumroad or Payhip. Write five personal outreach messages. Send them before any public post. Your first buyers come from people who already trust you.</div>
+      </div>
+      <div class="step-dot"></div>
+    </div>
+  </div>
+</section>
+
+<section class="section-quote">
+  <p class="quote-text reveal">"People do not pay for experts. They pay for someone who is a few steps ahead of them, who has solved a problem they are currently stuck on, and who can explain it in a way that makes sense. That is not expertise. That is experience. You have experience."</p>
+  <div class="quote-attr reveal delay-2">— The First Offer Kit, Section 1</div>
+</section>
+
+<section class="section-creator">
+  <div class="creator-img-wrap reveal-left">
+    <img class="creator-img" src="../design/Gemini_Generated_Image_.png" alt="Vaska Cvetanoska — Cvetanichin" />
+    <div class="creator-frame"></div>
+  </div>
+  <div class="creator-content reveal-right">
+    <div class="section-label">Who made this</div>
+    <div class="creator-name">Vaska<br><em>Cvetanoska</em></div>
+    <div class="creator-bio">
+      <p>I built this kit because I was the woman it is designed for. I had the skills, the experience, and the quiet certainty that I had something worth selling — and I had no idea how to package it, price it, or get it in front of anyone.</p>
+      <p>I figured it out. It was slower and messier than it needed to be. This kit is what I wish I had started with.</p>
+      <p>Cvetanichin is a brand for women who want to earn intelligently — with calm, clear systems instead of constant hustle.</p>
+    </div>
+    <div class="creator-rule"></div>
+    <div class="creator-tagline">Cvetanichin · Digital products for women who are ready</div>
+  </div>
+</section>
+
+<section class="section-formats">
+  <div class="section-label reveal">Product formats covered</div>
+  <h2 class="section-heading reveal delay-1">Choose what you can finish</h2>
+  <div class="formats-grid">
+    <div class="format-card reveal delay-1"><div class="format-dot"><div class="format-dot-inner"></div></div><div class="format-name">PDF Guide</div><div class="format-desc">15–30 pages, step-by-step process. Quickest to create. Easiest to price and deliver.</div></div>
+    <div class="format-card reveal delay-2"><div class="format-dot"><div class="format-dot-inner"></div></div><div class="format-name">Template Pack</div><div class="format-desc">Ready-to-use files your buyer adapts. Very high perceived value for the time it takes to build.</div></div>
+    <div class="format-card reveal delay-3"><div class="format-dot"><div class="format-dot-inner"></div></div><div class="format-name">Mini Toolkit</div><div class="format-desc">PDF guide plus one or two templates. Best of both: strong perceived value, fast to build.</div></div>
+    <div class="format-card reveal delay-4"><div class="format-dot"><div class="format-dot-inner"></div></div><div class="format-name">Email Mini-Course</div><div class="format-desc">5–7 emails over one to two weeks. Good for topics that benefit from spacing and repetition.</div></div>
+  </div>
+</section>
+
+<section class="section-cta" id="cta">
+  <h2 class="cta-heading reveal-left">Stop<br>preparing.<br><em>Start earning.</em></h2>
+  <div class="cta-right reveal-right">
+    <div class="cta-price-row">
+      <span class="cta-price">€37</span>
+      <div class="cta-price-detail">One-time payment<br>Standard price €57</div>
+    </div>
+    <!-- Replace href="#" with your Gumroad / Payhip checkout URL -->
+    <a href="#" class="btn-primary" style="width:100%;justify-content:center;">
+      <span>Get instant access for €37</span>
+      <span class="arrow">→</span>
+    </a>
+    <div class="cta-reassurance">
+      <div class="cta-line">Delivered instantly as a PDF. No complicated setup.</div>
+      <div class="cta-line">One section per day. Product live within two weeks.</div>
+      <div class="cta-line">Built for women rebuilding on their own terms.</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span class="footer-brand">Cvetanichin</span>
+  <span class="footer-copy">© 2026 Cvetanichin. All rights reserved.</span>
+</footer>
+
+<div id="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">
+  <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
+</div>
+
+<script>
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); } });
+}, {threshold:0.12, rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal,.reveal-left,.reveal-right').forEach(el => io.observe(el));
+
+const nav = document.getElementById('nav');
+const bar = document.getElementById('progress-bar');
+const top = document.getElementById('back-top');
+const docH = () => document.documentElement.scrollHeight - window.innerHeight;
+window.addEventListener('scroll', () => {
+  const s = window.scrollY;
+  bar.style.width = Math.min(100, (s / docH()) * 100) + '%';
+  nav.classList.toggle('scrolled', s > 40);
+  top.classList.toggle('show', s > 400);
+}, {passive:true});
+</script>
+</body>
+</html>

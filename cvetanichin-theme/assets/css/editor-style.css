@@ -1,0 +1,73 @@
+/* =============================================================
+   Cvetanichin — Gutenberg Editor Styles
+   Parity with front-end. Loaded via enqueue_block_editor_assets.
+   ============================================================= */
+
+/* Import tokens */
+@import './tokens.css';
+
+/* Editor body */
+body.block-editor-page,
+.editor-styles-wrapper {
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.9;
+  color: #1E2019;
+  background: #EDEAE5;
+}
+
+/* Force editorial heading style — no bold, always italic Fraunces */
+.editor-styles-wrapper h1,
+.editor-styles-wrapper h2,
+.editor-styles-wrapper h3 {
+  font-family: 'Fraunces', Georgia, serif;
+  font-style: italic;
+  font-weight: 200;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+}
+.editor-styles-wrapper h4,
+.editor-styles-wrapper h5,
+.editor-styles-wrapper h6 {
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+/* No bold in headings */
+.editor-styles-wrapper h1 strong,
+.editor-styles-wrapper h2 strong,
+.editor-styles-wrapper h3 strong { font-weight: 200; }
+
+/* Blockquote */
+.editor-styles-wrapper blockquote {
+  border-left: 3px solid #E2C044;
+  padding-left: 24px;
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-weight: 200;
+  font-size: 21px;
+  line-height: 1.4;
+}
+
+/* Button blocks */
+.editor-styles-wrapper .wp-block-button__link {
+  font-family: 'Outfit', sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border-radius: 0;
+}
+
+/* No rounded corners on any block */
+.editor-styles-wrapper .wp-block-image img,
+.editor-styles-wrapper .wp-block-cover,
+.editor-styles-wrapper .wp-block-group { border-radius: 0; }
+
+/* Max prose width */
+.editor-styles-wrapper p,
+.editor-styles-wrapper ul,
+.editor-styles-wrapper ol { max-width: 680px; }

@@ -1,0 +1,76 @@
+<!-- @dsCard group="Components" viewport="760x900" name="Sections: Quote, Stats, Cards, CTA" subtitle="Composed editorial blocks built from the primitives" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../../styles.css">
+<style>
+  body{margin:0;background:var(--ivory);font-family:var(--font-body);color:var(--charcoal);}
+  .cap{font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--rose);
+    margin:0 0 14px;font-weight:500;padding:0 32px;}
+  .pad{padding:28px 32px 0;}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:0 32px;}
+  .darkwrap{background:var(--charcoal);padding:24px 32px;}
+  .darkgrid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,0.05);}
+  .block{margin-bottom:8px;}
+</style>
+</head>
+<body>
+  <div id="root"></div>
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+  <script src="../../_ds_bundle.js"></script>
+  <script type="text/babel">
+    const { Quote, StatRow, ProductCard, FeatureItem, CTABlock } = window.CvetanichinDesignSystem_f4419f;
+    function Demo() {
+      return (
+        <div>
+          <p className="cap" style={{paddingTop:'28px'}}>Stat row</p>
+          <StatRow items={[
+            { value:'4', label:'Sections' },
+            { value:'14', label:'Days to launch' },
+            { value:'5', label:'Ready-to-use tools' },
+            { value:'€37', label:'One-time' },
+          ]} />
+
+          <p className="cap pad">Quote</p>
+          <Quote attribution="The First Offer Kit, Section 1">
+            People do not pay for experts. They pay for someone who is a few steps ahead of them.
+          </Quote>
+
+          <p className="cap" style={{paddingTop:'28px'}}>Product cards</p>
+          <div className="grid2">
+            <ProductCard title="PDF Guide" description="15–30 pages, step-by-step process. Quickest to create and deliver." />
+            <ProductCard serifTitle mark={false} eyebrow="Offer" title="The First Offer Kit"
+              description="Build and sell your first digital product this month." price="€37" priceNote="One-time" />
+          </div>
+
+          <p className="cap pad">Feature tiles</p>
+          <div className="darkwrap">
+            <div className="darkgrid">
+              <FeatureItem number="01" title="A defined offer" description="What you're selling, who it's for, and the result — in one sentence." />
+              <FeatureItem number="02" title="A digital product" description="Built with AI in 3–5 focused sessions. A PDF, template pack, or toolkit." />
+            </div>
+          </div>
+
+          <p className="cap pad">Step rows</p>
+          <div style={{padding:'0 32px',borderTop:'0.5px solid var(--border-rose)'}}>
+            <FeatureItem variant="step" number="Section 1" title="Identify what you already have"
+              description="A 10-minute audit surfaces sellable knowledge. You end with one offer sentence." />
+            <FeatureItem variant="step" number="Section 2" title="Scope your first digital product"
+              description="Apply the one-result rule. Choose a format. Price it honestly." />
+          </div>
+
+          <p className="cap" style={{paddingTop:'28px'}}>CTA block</p>
+          <CTABlock heading="Stop<br>preparing.<br><em>Start earning.</em>" price="€37"
+            priceDetail={<>One-time payment<br/>Standard price €57</>}
+            ctaLabel="Get instant access for €37" ctaHref="#"
+            reassurances={['Delivered instantly as a PDF. No complicated setup.','Product live within two weeks.']} />
+        </div>
+      );
+    }
+    ReactDOM.createRoot(document.getElementById('root')).render(<Demo/>);
+  </script>
+</body>
+</html>
